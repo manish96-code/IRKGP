@@ -9,14 +9,14 @@ if ($currentPage === 'about.php') {
     $activePage = 'contact';
 }
 ?>
-<!-- Navigation Bar (Static White with Shadow) -->
+<!-- Navigation Bar -->
 <header id="navbar" class="sticky top-0 left-0 w-full z-50 bg-white border-b border-slate-200/80 shadow-sm transition-all duration-300">
     <!-- Top Info Row -->
-    <div id="top-bar" class="bg-primary text-gold-100 text-xs py-2 px-6 border-b border-gold-800/10">
+    <div id="top-bar" class="bg-slate-100 text-slate-600 text-xs py-2 px-6 border-b border-slate-200">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-4">
                 <span><i class="fa-solid fa-location-dot text-secondary mr-1.5"></i> Registered in Bihar</span>
-                <span class="hidden md:inline text-slate-600">|</span>
+                <span class="hidden md:inline text-slate-300">|</span>
                 <span class="hidden md:inline"><i class="fa-solid fa-briefcase text-secondary mr-1.5"></i> Manpower Recruitment Solutions</span>
             </div>
             <div class="flex items-center gap-4">
@@ -29,9 +29,7 @@ if ($currentPage === 'about.php') {
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <!-- Logo -->
         <a href="index.php" class="flex items-center gap-3 group">
-            <div class="h-10 w-10 rounded-full bg-secondary p-0.5 shadow-sm flex items-center justify-center text-primary text-lg font-bold group-hover:scale-105 transition-transform duration-200">
-                IR
-            </div>
+            <img src="assets/images/logo.png" alt="IRKGP Logo" class="h-10 w-10 rounded-full object-cover shadow-sm">
             <div class="flex flex-col">
                 <span id="brand-name" class="text-lg font-extrabold tracking-tight text-primary leading-none group-hover:text-secondary transition-colors">
                     IRKGP <span class="text-secondary font-semibold text-base">Services</span>
@@ -47,7 +45,7 @@ if ($currentPage === 'about.php') {
             <a href="services.php" class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'services' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Services</a>
             <a href="contact.php" class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'contact' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Contact</a>
             
-            <a href="contact.php" class="px-5 py-2.5 bg-secondary hover:bg-primary text-primary hover:text-white font-bold rounded-lg text-xs shadow-sm hover:shadow transition-all duration-300 uppercase tracking-wider">Get in Touch</a>
+            <a href="contact.php" class="px-5 py-2.5 bg-secondary hover:bg-amber-500 text-primary font-bold rounded-lg text-xs shadow-sm hover:shadow transition-all duration-300 uppercase tracking-wider">Get in Touch</a>
         </nav>
 
         <!-- Mobile Hamburg Button -->

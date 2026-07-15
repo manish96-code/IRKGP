@@ -10,11 +10,6 @@ include 'includes/navbar.php';
     <div class="absolute inset-0 bg-white/90"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 text-center text-slate-800 space-y-6 animate-fade-in-up">
-        <!-- Logo -->
-        <div class="inline-flex h-16 w-16 rounded-full bg-secondary p-0.5 shadow-md items-center justify-center text-primary text-3xl font-extrabold select-none mx-auto border border-white">
-            <span>IR</span>
-        </div>
-        
         <h2 class="text-xs font-bold text-secondary uppercase tracking-widest block">IRKGP SERVICES PVT. LTD.</h2>
         
         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto font-serif text-primary">
@@ -147,7 +142,7 @@ include 'includes/navbar.php';
                 <div class="text-2xl text-secondary"><i class="fa-solid fa-user-group"></i></div>
                 <div>
                     <h4 class="font-bold text-primary text-base mb-1">Experienced Team</h4>
-                    <p class="text-slate-500 text-sm">Professional recruiters who understand domain specifics and local labor resources.</p>
+                    <p class="text-slate-500 text-sm">Professional recruiters who understand domain specifics and local manpower resources.</p>
                 </div>
             </div>
 

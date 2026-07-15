@@ -33,7 +33,7 @@ include 'includes/navbar.php';
                     </div>
                     <div>
                         <h3 class="font-bold text-primary text-base mb-1 font-serif">Corporate Address</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Madhubani, Purnea, Bihar, India</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">Manjhli Chowk, Madhubani, Purnia, Bihar, India</p>
                     </div>
                 </div>
 
@@ -80,7 +80,7 @@ include 'includes/navbar.php';
 <section class="pb-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-            <iframe src="https://maps.google.com/maps?q=Madhubani,%20Purnia,%20Bihar&t=&z=14&ie=UTF8&iwloc=&output=embed" class="w-full h-[450px] border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://maps.google.com/maps?q=Manjhli%20Chowk,%20Madhubani,%20Purnia,%20Bihar&t=&z=16&ie=UTF8&iwloc=&output=embed" class="w-full h-[450px] border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 </section>

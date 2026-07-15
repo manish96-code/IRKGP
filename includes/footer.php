@@ -4,9 +4,7 @@
             <!-- About Company -->
             <div class="space-y-4">
                 <a href="index.php" class="flex items-center gap-3 group">
-                    <div class="h-10 w-10 rounded-full bg-secondary p-0.5 shadow-sm flex items-center justify-center text-primary text-lg font-bold">
-                        IR
-                    </div>
+                    <img src="assets/images/logo.png" alt="IRKGP Logo" class="h-10 w-10 rounded-full object-cover shadow-sm">
                     <div class="flex flex-col">
                         <span class="text-lg font-extrabold tracking-tight text-primary leading-none">
                             IRKGP <span class="text-secondary font-semibold text-base">Services</span>
@@ -54,7 +52,7 @@
                 <ul class="space-y-4 text-sm text-slate-500">
                     <li class="flex items-start gap-3">
                         <i class="fa-solid fa-location-dot text-secondary mt-1"></i>
-                        <span>Madhubani, Purnia, Bihar, India</span>
+                        <span>Manjhli Chowk, Madhubani, Purnia, Bihar</span>
                     </li>
                     <li class="flex items-center gap-3">
                         <i class="fa-solid fa-phone text-secondary"></i>
@@ -70,7 +68,7 @@
 
         <!-- Copyright -->
         <div class="max-w-7xl mx-auto px-6 border-t border-slate-200 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-medium">
-            <p>&copy; <?php echo date('Y'); ?> IRKGP Services Pvt. Ltd. All rights reserved. Registered in Bihar.</p>
+            <p>&copy; <?php echo date('Y'); ?> IRKGP Services Pvt. Ltd. All rights reserved.</p>
             <p>Designed with <i class="fa-solid fa-heart text-secondary"></i> for excellence.</p>
         </div>
     </footer>

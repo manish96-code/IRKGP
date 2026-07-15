@@ -113,12 +113,12 @@ include 'includes/navbar.php';
             <ul class="space-y-3 text-slate-600 text-sm font-medium">
                 <li><i class="fa-solid fa-circle-check text-secondary mr-2"></i> Thorough background & reference validation</li>
                 <li><i class="fa-solid fa-circle-check text-secondary mr-2"></i> Preliminary technical skill tests</li>
-                <li><i class="fa-solid fa-circle-check text-secondary mr-2"></i> Compliance with regional Bihar labor policies</li>
+                <li><i class="fa-solid fa-circle-check text-secondary mr-2"></i> Compliance with regional Bihar employment policies</li>
             </ul>
         </div>
         <!-- Right side CTA -->
         <div class="bg-white text-slate-800 p-8 rounded-2xl border border-slate-200 space-y-6 shadow-sm">
-            <h3 class="text-2xl font-bold font-serif text-primary">Looking for a custom labor recruitment quote?</h3>
+            <h3 class="text-2xl font-bold font-serif text-primary">Looking for a custom manpower recruitment quote?</h3>
             <p class="text-slate-500 text-sm leading-relaxed font-light font-sans">
                 Give us details about your worker requirements, operational durations, and locations.
             </p>
