@@ -5,7 +5,7 @@ include 'includes/navbar.php';
 ?>
 
 <!-- Banner Section -->
-<section class="relative py-28 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80');">
+<section class="relative py-28 bg-cover bg-center" style="background-image: url('assets/images/services-banner.jpg');">
     <div class="absolute inset-0 bg-white/90"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 text-center text-primary">
         <h1 class="text-4xl md:text-5xl font-extrabold font-serif tracking-tight">Our Services</h1>

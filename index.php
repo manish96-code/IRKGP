@@ -5,7 +5,7 @@ include 'includes/navbar.php';
 ?>
 
 <!-- 1. Hero Section -->
-<section class="relative min-h-[75vh] md:h-[calc(100vh-112px)] flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');">
+<section class="relative min-h-[75vh] md:h-[calc(100vh-112px)] flex items-center justify-center bg-cover bg-center" style="background-image: url('assets/images/hero-bg.jpg');">
     <!-- Light overlay -->
     <div class="absolute inset-0 bg-white/90"></div>
 
@@ -46,7 +46,7 @@ include 'includes/navbar.php';
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Image Col -->
         <div class="relative">
-            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="About IRKGP team" class="rounded-2xl shadow-md border border-slate-200 object-cover w-full h-[400px]">
+            <img src="assets/images/about-preview.jpg" alt="About IRKGP team" class="rounded-2xl shadow-md border border-slate-200 object-cover w-full h-[400px]">
         </div>
 
         <!-- Info Col -->

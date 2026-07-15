@@ -5,7 +5,7 @@ include 'includes/navbar.php';
 ?>
 
 <!-- Banner Section (Light overlay, no gradients) -->
-<section class="relative py-28 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e0ee268cfec?auto=format&fit=crop&w=1920&q=80');">
+<section class="relative py-28 bg-cover bg-center" style="background-image: url('assets/images/about-banner.jpg');">
     <div class="absolute inset-0 bg-white/90"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 text-center text-primary">
         <h1 class="text-4xl md:text-5xl font-extrabold font-serif tracking-tight">About Our Company</h1>
@@ -29,7 +29,7 @@ include 'includes/navbar.php';
         </div>
         <!-- Image Column (Removed gradient blur overlay) -->
         <div class="relative">
-            <img src="https://images.unsplash.com/photo-1552581230-c013b8e48b9a?auto=format&fit=crop&w=800&q=80" alt="IRKGP History" class="rounded-2xl shadow-md border border-slate-200 object-cover w-full h-[380px]">
+            <img src="assets/images/about-preview.jpg" alt="IRKGP History" class="rounded-2xl shadow-md border border-slate-200 object-cover w-full h-[380px]">
         </div>
     </div>
 </section>
@@ -112,7 +112,7 @@ include 'includes/navbar.php';
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Member 1 -->
             <div class="bg-white border border-slate-200/50 rounded-xl overflow-hidden shadow-sm hover:shadow transition-all duration-300 text-center">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="CEO" class="w-full h-72 object-cover">
+                <img src="assets/images/ceo.jpg" alt="CEO" class="w-full h-72 object-cover">
                 <div class="p-6">
                     <h3 class="font-bold text-primary text-lg mb-1 font-serif">Rajesh Kumar</h3>
                     <p class="text-secondary text-xs font-bold uppercase tracking-wider mb-3">Managing Director</p>
@@ -122,7 +122,7 @@ include 'includes/navbar.php';
 
             <!-- Member 2 -->
             <div class="bg-white border border-slate-200/50 rounded-xl overflow-hidden shadow-sm hover:shadow transition-all duration-300 text-center">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Lead Recruiter" class="w-full h-72 object-cover">
+                <img src="assets/images/recruiter.jpg" alt="Lead Recruiter" class="w-full h-72 object-cover">
                 <div class="p-6">
                     <h3 class="font-bold text-primary text-lg mb-1 font-serif">Priya Sharma</h3>
                     <p class="text-secondary text-xs font-bold uppercase tracking-wider mb-3">Lead Talent Advisor</p>
@@ -132,7 +132,7 @@ include 'includes/navbar.php';
 
             <!-- Member 3 -->
             <div class="bg-white border border-slate-200/50 rounded-xl overflow-hidden shadow-sm hover:shadow transition-all duration-300 text-center">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="HR Operations" class="w-full h-72 object-cover">
+                <img src="assets/images/operations.jpg" alt="HR Operations" class="w-full h-72 object-cover">
                 <div class="p-6">
                     <h3 class="font-bold text-primary text-lg mb-1 font-serif">Amit Verma</h3>
                     <p class="text-secondary text-xs font-bold uppercase tracking-wider mb-3">Operations Manager</p>

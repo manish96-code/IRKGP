@@ -54,7 +54,7 @@
                 <ul class="space-y-4 text-sm text-slate-500">
                     <li class="flex items-start gap-3">
                         <i class="fa-solid fa-location-dot text-secondary mt-1"></i>
-                        <span>Patna, Bihar, India</span>
+                        <span>Madhubani, Purnia, Bihar, India</span>
                     </li>
                     <li class="flex items-center gap-3">
                         <i class="fa-solid fa-phone text-secondary"></i>
