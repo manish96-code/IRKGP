@@ -1,15 +1,15 @@
 <?php
 $pageTitle = "Services";
-include 'includes/header.php';
+include 'includes/head.php';
 include 'includes/navbar.php';
 ?>
 
 <!-- Banner Section -->
 <section class="relative py-28 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80');">
-    <div class="absolute inset-0 bg-primary/85"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
+    <div class="absolute inset-0 bg-white/90"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center text-primary">
         <h1 class="text-4xl md:text-5xl font-extrabold font-serif tracking-tight">Our Services</h1>
-        <p class="text-slate-300 text-sm md:text-base font-light mt-3 max-w-lg mx-auto">Explore our range of workforce, staffing, and HR management solutions.</p>
+        <p class="text-slate-600 text-sm md:text-base font-light mt-3 max-w-lg mx-auto">Explore our range of workforce, staffing, and HR management solutions.</p>
     </div>
 </section>
 
@@ -26,7 +26,7 @@ include 'includes/navbar.php';
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- 1. Recruitment Services -->
             <div class="bg-[#fcfbf9] border border-slate-200/50 hover:border-secondary rounded-xl p-8 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 group">
-                <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl mb-6 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl mb-6 group-hover:bg-secondary group-hover:text-primary transition-colors duration-300">
                     <i class="fa-solid fa-user-tie"></i>
                 </div>
                 <h3 class="font-bold text-primary text-xl mb-3 font-serif">Recruitment Services</h3>
@@ -38,7 +38,7 @@ include 'includes/navbar.php';
 
             <!-- 2. Staffing Solutions -->
             <div class="bg-[#fcfbf9] border border-slate-200/50 hover:border-secondary rounded-xl p-8 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 group">
-                <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl mb-6 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl mb-6 group-hover:bg-secondary group-hover:text-primary transition-colors duration-300">
                     <i class="fa-solid fa-users"></i>
                 </div>
                 <h3 class="font-bold text-primary text-xl mb-3 font-serif">Staffing Solutions</h3>
@@ -50,7 +50,7 @@ include 'includes/navbar.php';
 
             <!-- 3. HR Consulting -->
             <div class="bg-[#fcfbf9] border border-slate-200/50 hover:border-secondary rounded-xl p-8 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 group">
-                <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl mb-6 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl mb-6 group-hover:bg-secondary group-hover:text-primary transition-colors duration-300">
                     <i class="fa-solid fa-scale-balanced"></i>
                 </div>
                 <h3 class="font-bold text-primary text-xl mb-3 font-serif">HR Consulting</h3>
@@ -62,7 +62,7 @@ include 'includes/navbar.php';
 
             <!-- 4. Payroll Management -->
             <div class="bg-[#fcfbf9] border border-slate-200/50 hover:border-secondary rounded-xl p-8 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 group">
-                <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl mb-6 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl mb-6 group-hover:bg-secondary group-hover:text-primary transition-colors duration-300">
                     <i class="fa-solid fa-money-check-dollar"></i>
                 </div>
                 <h3 class="font-bold text-primary text-xl mb-3 font-serif">Payroll Management</h3>
@@ -74,7 +74,7 @@ include 'includes/navbar.php';
 
             <!-- 5. Workforce Management -->
             <div class="bg-[#fcfbf9] border border-slate-200/50 hover:border-secondary rounded-xl p-8 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 group">
-                <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl mb-6 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl mb-6 group-hover:bg-secondary group-hover:text-primary transition-colors duration-300">
                     <i class="fa-solid fa-chart-pie"></i>
                 </div>
                 <h3 class="font-bold text-primary text-xl mb-3 font-serif">Workforce Management</h3>
@@ -86,7 +86,7 @@ include 'includes/navbar.php';
 
             <!-- 6. Recruitment Process Outsourcing (RPO) -->
             <div class="bg-[#fcfbf9] border border-slate-200/50 hover:border-secondary rounded-xl p-8 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 group">
-                <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl mb-6 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl mb-6 group-hover:bg-secondary group-hover:text-primary transition-colors duration-300">
                     <i class="fa-solid fa-briefcase"></i>
                 </div>
                 <h3 class="font-bold text-primary text-xl mb-3 font-serif">RPO (Recruitment Process Outsourcing)</h3>
@@ -117,12 +117,12 @@ include 'includes/navbar.php';
             </ul>
         </div>
         <!-- Right side CTA -->
-        <div class="bg-primary text-white p-8 rounded-2xl border border-gold-800/10 space-y-6 shadow-md">
-            <h3 class="text-2xl font-bold font-serif text-secondary">Looking for a custom labor recruitment quote?</h3>
-            <p class="text-slate-400 text-sm leading-relaxed font-light">
+        <div class="bg-white text-slate-800 p-8 rounded-2xl border border-slate-200 space-y-6 shadow-sm">
+            <h3 class="text-2xl font-bold font-serif text-primary">Looking for a custom labor recruitment quote?</h3>
+            <p class="text-slate-500 text-sm leading-relaxed font-light font-sans">
                 Give us details about your worker requirements, operational durations, and locations.
             </p>
-            <a href="contact.php" class="px-6 py-3 bg-secondary text-primary font-bold text-xs uppercase tracking-wider rounded-lg shadow inline-block hover:bg-white hover:text-primary transition duration-300">Get Quote</a>
+            <a href="contact.php" class="px-6 py-3 bg-secondary hover:bg-amber-500 text-primary font-bold text-xs uppercase tracking-wider rounded-lg shadow inline-block transition duration-300">Get Quote</a>
         </div>
     </div>
 </section>

@@ -1,24 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Sticky Navigation Bar Scroll Effect
-    const navbar = document.getElementById('navbar');
-    
-    function checkScroll() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('bg-white', 'shadow-md', 'border-slate-200/80');
-            navbar.classList.remove('bg-transparent', 'border-transparent');
-        } else {
-            // Keep header light/transparent at the top of the page
-            navbar.classList.remove('bg-white', 'shadow-md', 'border-slate-200/80');
-            navbar.classList.add('bg-transparent', 'border-transparent');
-        }
-    }
-
-    if (navbar) {
-        window.addEventListener('scroll', checkScroll);
-        checkScroll();
-    }
-
-    // 2. Mobile Nav Toggle
+    // 1. Mobile Nav Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -28,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Stats Counter Animation using Intersection Observer
+    // 2. Stats Counter Animation using Intersection Observer
     const counters = document.querySelectorAll('.counter-val');
     
     const countUp = (counter) => {

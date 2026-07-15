@@ -10,25 +10,9 @@ body, .font-sans {
 /* Custom background patterns */
 .bg-corporate-pattern {
     background-image: 
-        radial-gradient(at 0% 0%, rgba(200, 160, 74, 0.05) 0px, transparent 50%), 
-        radial-gradient(at 100% 0%, rgba(15, 23, 42, 0.03) 0px, transparent 50%);
+        radial-gradient(at 0% 0%, rgba(200, 160, 74, 0.03) 0px, transparent 50%), 
+        radial-gradient(at 100% 0%, rgba(15, 23, 42, 0.02) 0px, transparent 50%);
 }
-
-/* Dynamic header state styling on scroll */
-
-/* When navbar is transparent (at top) */
-#navbar.bg-transparent #brand-name { color: #ffffff; }
-#navbar.bg-transparent #brand-sub { color: #cbd5e1; }
-#navbar.bg-transparent .nav-links a:not(.bg-secondary) { color: #e2e8f0; }
-#navbar.bg-transparent .nav-links a:not(.bg-secondary):hover { color: #C8A04A; }
-#navbar.bg-transparent #mobile-menu-btn { color: #ffffff; }
-
-/* When navbar is active/scrolled */
-#navbar.bg-white #brand-name { color: #0F172A; }
-#navbar.bg-white #brand-sub { color: #64748b; }
-#navbar.bg-white .nav-links a:not(.bg-secondary) { color: #334155; }
-#navbar.bg-white .nav-links a:not(.bg-secondary):hover { color: #C8A04A; }
-#navbar.bg-white #mobile-menu-btn { color: #0F172A; }
 
 /* Animations */
 @keyframes fadeInUp {

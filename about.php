@@ -1,15 +1,15 @@
 <?php
 $pageTitle = "About Us";
-include 'includes/header.php';
+include 'includes/head.php';
 include 'includes/navbar.php';
 ?>
 
-<!-- Banner Section -->
+<!-- Banner Section (Light overlay, no gradients) -->
 <section class="relative py-28 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e0ee268cfec?auto=format&fit=crop&w=1920&q=80');">
-    <div class="absolute inset-0 bg-primary/85"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
+    <div class="absolute inset-0 bg-white/90"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center text-primary">
         <h1 class="text-4xl md:text-5xl font-extrabold font-serif tracking-tight">About Our Company</h1>
-        <p class="text-slate-300 text-sm md:text-base font-light mt-3 max-w-lg mx-auto">Discover the foundation, values, and leadership driving IRKGP Services forward.</p>
+        <p class="text-slate-600 text-sm md:text-base font-light mt-3 max-w-lg mx-auto">Discover the foundation, values, and leadership driving IRKGP Services forward.</p>
     </div>
 </section>
 
@@ -27,10 +27,9 @@ include 'includes/navbar.php';
                 Our history is rooted in understanding candidate needs and operational corporate demands. By bridging geographic talent resources, we have supported construction pipelines, healthcare settings, and corporate grids with vetted professionals.
             </p>
         </div>
-        <!-- Image Column -->
+        <!-- Image Column (Removed gradient blur overlay) -->
         <div class="relative">
-            <div class="absolute -inset-1 bg-gradient-to-r from-secondary to-primary rounded-2xl blur opacity-20"></div>
-            <img src="https://images.unsplash.com/photo-1552581230-c013b8e48b9a?auto=format&fit=crop&w=800&q=80" alt="IRKGP History" class="relative rounded-2xl shadow-lg object-cover w-full h-[380px]">
+            <img src="https://images.unsplash.com/photo-1552581230-c013b8e48b9a?auto=format&fit=crop&w=800&q=80" alt="IRKGP History" class="rounded-2xl shadow-md border border-slate-200 object-cover w-full h-[380px]">
         </div>
     </div>
 </section>
@@ -144,15 +143,15 @@ include 'includes/navbar.php';
     </div>
 </section>
 
-<!-- CTA Section -->
-<section class="py-20 bg-primary text-white text-center border-t border-gold-800/10">
+<!-- CTA Section (Light theme, solid buttons) -->
+<section class="py-20 bg-slate-100 text-slate-800 text-center border-t border-slate-200">
     <div class="max-w-4xl mx-auto px-6 space-y-6">
-        <h2 class="text-3xl font-extrabold font-serif tracking-tight">Partner with Bihar's Top Recruitment Team</h2>
-        <p class="text-slate-400 max-w-lg mx-auto text-sm font-light">
+        <h2 class="text-3xl font-extrabold font-serif tracking-tight text-primary">Partner with Bihar's Top Recruitment Team</h2>
+        <p class="text-slate-500 max-w-lg mx-auto text-sm font-light font-sans">
             We provide verified skilled technical labor and corporate resources built on structural legal agreements.
         </p>
         <div class="pt-2">
-            <a href="contact.php" class="px-8 py-3.5 bg-gradient-to-r from-secondary to-gold-600 text-primary font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 inline-block text-xs uppercase tracking-wider">
+            <a href="contact.php" class="px-8 py-3.5 bg-secondary hover:bg-amber-500 text-primary font-bold rounded-xl shadow hover:-translate-y-1 transition-all duration-300 inline-block text-xs uppercase tracking-wider">
                 Partner with Us
             </a>
         </div>

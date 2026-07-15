@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Contact Us";
-include 'includes/header.php';
+include 'includes/head.php';
 include 'includes/navbar.php';
 
 $messageSent = false;
@@ -24,12 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 }
 ?>
 
-<!-- Banner Section -->
+<!-- Banner Section (Light overlay, no gradients) -->
 <section class="relative py-28 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e0ee268cfec?auto=format&fit=crop&w=1920&q=80');">
-    <div class="absolute inset-0 bg-primary/85"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
+    <div class="absolute inset-0 bg-white/90"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center text-primary">
         <h1 class="text-4xl md:text-5xl font-extrabold font-serif tracking-tight">Contact Us</h1>
-        <p class="text-slate-300 text-sm md:text-base font-light mt-3 max-w-lg mx-auto">Get in touch with our recruitment consultants for custom quote queries.</p>
+        <p class="text-slate-600 text-sm md:text-base font-light mt-3 max-w-lg mx-auto">Get in touch with our recruitment consultants for custom quote queries.</p>
     </div>
 </section>
 
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 <span class="text-2xl">🎉</span>
                 <div>
                     <h4 class="font-bold text-emerald-900 text-lg">Message Submitted Successfully!</h4>
-                    <p class="text-sm mt-1">Thank you, <strong><?= $name ?></strong>. We have received your inquiry regarding <strong>"<?= $subject ?>"</strong>. Our operations team will get in touch with you shortly at <strong><?= $email ?></strong>.</p>
+                    <p class="text-sm mt-1 font-sans">Thank you, <strong><?= $name ?></strong>. We have received your inquiry regarding <strong>"<?= $subject ?>"</strong>. Our operations team will get in touch with you shortly at <strong><?= $email ?></strong>.</p>
                 </div>
             </div>
         <?php endif; ?>
@@ -112,9 +112,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 </div>
             </div>
 
-            <!-- Right Side: Contact Form -->
+            <!-- Right Side: Contact Form (Removed gradient card background) -->
             <div class="lg:col-span-8">
-                <div class="bg-white border border-slate-200/60 rounded-2xl p-8 md:p-10 shadow-lg bg-gradient-to-br from-white to-slateBg">
+                <div class="bg-white border border-slate-200/60 rounded-2xl p-8 md:p-10 shadow-md">
                     <form action="contact.php" method="POST" class="space-y-6">
                         <input type="hidden" name="action" value="contact">
 
@@ -156,7 +156,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                         </div>
 
                         <div>
-                            <button type="submit" class="w-full py-4 bg-gradient-to-r from-primary via-[#1e293b] to-primary hover:from-secondary hover:to-gold-600 text-white hover:text-primary font-bold rounded-xl shadow-md transition duration-300 uppercase tracking-wider text-xs">
+                            <!-- Submit Button (Solid Primary Navy Color, no gradients) -->
+                            <button type="submit" class="w-full py-4 bg-primary hover:bg-slate-800 text-white font-bold rounded-xl shadow transition duration-200 uppercase tracking-wider text-xs">
                                 Send Message <i class="fa-solid fa-paper-plane ml-2 text-xs"></i>
                             </button>
                         </div>
@@ -168,12 +169,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     </div>
 </section>
 
-<!-- Google Map Embed -->
+<!-- Google Map Embed (Removed absolute gradient blur outline wrapper) -->
 <section class="pb-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="relative">
-            <div class="absolute -inset-1 bg-gradient-to-r from-secondary to-primary rounded-2xl blur opacity-15"></div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115133.01016860368!2d85.07897217983637!3d25.608020764724213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f29937c52d4f05%3A0x831a0e05f607b270!2sPatna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1689410000000!5m2!1sen!2sin" class="relative w-full h-[400px] border-0 rounded-2xl shadow-md" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115133.01016860368!2d85.07897217983637!3d25.608020764724213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f29937c52d4f05%3A0x831a0e05f607b270!2sPatna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1689410000000!5m2!1sen!2sin" class="w-full h-[400px] border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 </section>
