@@ -12,7 +12,7 @@ include 'includes/navbar.php';
     <div class="relative z-10 max-w-7xl mx-auto px-6 text-center text-slate-800 space-y-6 animate-fade-in-up">
         <h2 class="text-xs font-bold text-secondary uppercase tracking-widest block">IRKGP SERVICES PVT. LTD.</h2>
         
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto font-serif text-primary">
+        <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto font-serif text-primary">
             Professional Manpower Recruitment & Management Solutions
         </h1>
         
@@ -41,7 +41,7 @@ include 'includes/navbar.php';
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Image Col -->
         <div class="relative">
-            <img src="assets/images/about-preview.jpg" alt="About IRKGP team" class="rounded-2xl shadow-md border border-slate-200 object-cover w-full h-[400px]">
+            <img src="assets/images/about-preview.jpg" alt="About IRKGP team" class="rounded-2xl shadow-md border border-slate-200 object-cover w-full h-[280px] sm:h-[400px]">
         </div>
 
         <!-- Info Col -->

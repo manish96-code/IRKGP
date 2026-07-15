@@ -29,7 +29,7 @@ include 'includes/navbar.php';
         </div>
         <!-- Image Column -->
         <div class="relative">
-            <img src="assets/images/about-preview.jpg" alt="IRKGP History" class="rounded-2xl shadow-md border border-slate-200 object-cover w-full h-[380px]">
+            <img src="assets/images/about-preview.jpg" alt="IRKGP History" class="rounded-2xl shadow-md border border-slate-200 object-cover w-full h-[280px] sm:h-[380px]">
         </div>
     </div>
 </section>

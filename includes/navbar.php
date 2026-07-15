@@ -12,7 +12,7 @@ if ($currentPage === 'about.php') {
 <!-- Navigation Bar -->
 <header id="navbar" class="sticky top-0 left-0 w-full z-50 bg-white border-b border-slate-200/80 shadow-sm transition-all duration-300">
     <!-- Top Info Row -->
-    <div id="top-bar" class="bg-slate-100 text-slate-600 text-xs py-2 px-6 border-b border-slate-200">
+    <div id="top-bar" class="hidden sm:block bg-slate-100 text-slate-600 text-xs py-2 px-6 border-b border-slate-200">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-4">
                 <span><i class="fa-solid fa-location-dot text-secondary mr-1.5"></i> Registered in Bihar</span>
@@ -31,7 +31,7 @@ if ($currentPage === 'about.php') {
         <a href="index.php" class="flex items-center gap-3 group">
             <img src="assets/images/logo.png" alt="IRKGP Logo" class="h-10 w-10 rounded-full object-cover shadow-sm">
             <div class="flex flex-col">
-                <span id="brand-name" class="text-lg font-extrabold tracking-tight text-primary leading-none group-hover:text-secondary transition-colors">
+                <span id="brand-name" class="text-base sm:text-lg font-extrabold tracking-tight text-primary leading-none group-hover:text-secondary transition-colors">
                     IRKGP <span class="text-secondary font-semibold text-base">Services</span>
                 </span>
                 <span id="brand-sub" class="text-[9px] font-bold text-slate-500 tracking-wider uppercase mt-1">Pvt. Ltd.</span>

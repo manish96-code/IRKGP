@@ -69,7 +69,7 @@
         <!-- Copyright -->
         <div class="max-w-7xl mx-auto px-6 border-t border-slate-200 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-medium">
             <p>&copy; <?php echo date('Y'); ?> IRKGP Services Pvt. Ltd. All rights reserved.</p>
-            <p>Designed with <i class="fa-solid fa-heart text-secondary"></i> for excellence.</p>
+            <p>Designed with <i class="fa-solid fa-heart text-secondary"></i> by <a href="https://www.comestro.com/" target="_blank" rel="noopener" class="hover:text-secondary transition font-semibold">Comestro Techlabs Pvt Ltd</a></p>
         </div>
     </footer>
 

@@ -24,7 +24,7 @@ include 'includes/navbar.php';
         </div>
 
         <!-- Centered Office Details Card -->
-        <div class="bg-white border border-slate-200/80 rounded-2xl p-8 md:p-12 shadow-md bg-gradient-to-br from-white to-slateBg/30">
+        <div class="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-12 shadow-md bg-gradient-to-br from-white to-slateBg/30">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Address -->
                 <div class="flex gap-4 items-start p-4 hover:bg-slate-50 rounded-xl transition duration-200">
