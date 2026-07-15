@@ -1,0 +1,66 @@
+/* Typography overrides */
+h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body, .font-sans {
+    font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Custom background patterns */
+.bg-corporate-pattern {
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(200, 160, 74, 0.05) 0px, transparent 50%), 
+        radial-gradient(at 100% 0%, rgba(15, 23, 42, 0.03) 0px, transparent 50%);
+}
+
+/* Dynamic header state styling on scroll */
+
+/* When navbar is transparent (at top) */
+#navbar.bg-transparent #brand-name { color: #ffffff; }
+#navbar.bg-transparent #brand-sub { color: #cbd5e1; }
+#navbar.bg-transparent .nav-links a:not(.bg-secondary) { color: #e2e8f0; }
+#navbar.bg-transparent .nav-links a:not(.bg-secondary):hover { color: #C8A04A; }
+#navbar.bg-transparent #mobile-menu-btn { color: #ffffff; }
+
+/* When navbar is active/scrolled */
+#navbar.bg-white #brand-name { color: #0F172A; }
+#navbar.bg-white #brand-sub { color: #64748b; }
+#navbar.bg-white .nav-links a:not(.bg-secondary) { color: #334155; }
+#navbar.bg-white .nav-links a:not(.bg-secondary):hover { color: #C8A04A; }
+#navbar.bg-white #mobile-menu-btn { color: #0F172A; }
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+/* Custom shadows */
+.shadow-soft {
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 8px -1px rgba(15, 23, 42, 0.02);
+}
+
+.shadow-soft-hover:hover {
+    box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+/* Scroll behaviour */
+html {
+    scroll-behavior: smooth;
+}
