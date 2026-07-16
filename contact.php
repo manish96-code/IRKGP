@@ -42,9 +42,10 @@ include 'includes/navbar.php';
                     <div class="h-12 w-12 rounded-xl bg-gold-100 text-secondary flex items-center justify-center text-xl flex-shrink-0 shadow-sm">
                         <i class="fa-solid fa-phone"></i>
                     </div>
-                    <div>
+                    <div class="flex flex-col">
                         <h3 class="font-bold text-primary text-base mb-1 font-serif">Phone Number</h3>
-                        <a href="tel:+919876543210" class="text-slate-600 text-sm hover:text-secondary transition font-semibold">+91 98765 43210</a>
+                        <a href="tel:+919661307327" class="text-slate-600 text-sm hover:text-secondary transition font-semibold">+91 96613 07327</a>
+                        <a href="tel:+919472471486" class="text-slate-600 text-sm hover:text-secondary transition font-semibold">+91 94724 71486</a>
                     </div>
                 </div>
 
@@ -55,7 +56,7 @@ include 'includes/navbar.php';
                     </div>
                     <div>
                         <h3 class="font-bold text-primary text-base mb-1 font-serif">Email Address</h3>
-                        <a href="mailto:info@irkgpservices.com" class="text-slate-600 text-sm hover:text-secondary transition font-semibold">info@irkgpservices.com</a>
+                        <a href="mailto:irkgpservicespvtltd@gmail.com" class="text-slate-600 text-sm hover:text-secondary transition font-semibold">irkgpservicespvtltd@gmail.com</a>
                     </div>
                 </div>
 

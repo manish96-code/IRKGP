@@ -185,8 +185,8 @@ include 'includes/navbar.php';
     </div>
 </section>
 
-<!-- 5. Company Statistics (Light Theme, No Gradients) -->
-<section class="py-20 bg-white border-y border-slate-200 text-slate-800">
+<!-- 5. Company Statistics -->
+<!-- <section class="py-20 bg-white border-y border-slate-200 text-slate-800">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
             <div class="text-4xl md:text-5xl font-extrabold text-primary mb-2"><span class="counter-val" data-target="150">0</span>+</div>
@@ -205,9 +205,9 @@ include 'includes/navbar.php';
             <div class="text-xs md:text-sm text-slate-500 uppercase tracking-widest font-semibold">Years Experience</div>
         </div>
     </div>
-</section>
+</section> -->
 
-<!-- 6. Call To Action (Solid light background, no gradients/dark overlays) -->
+<!-- 6. Call To Action -->
 <section class="py-24 bg-slate-100 border-b border-slate-200 text-center relative overflow-hidden">
     <div class="relative z-10 max-w-4xl mx-auto px-6 space-y-6">
         <h2 class="text-3xl md:text-5xl font-extrabold font-serif tracking-tight leading-tight text-primary">
