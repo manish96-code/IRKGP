@@ -184,7 +184,9 @@ include 'includes/navbar.php';
             <div class="bg-white border border-slate-200/50 rounded-xl overflow-hidden shadow-sm hover:shadow transition-all duration-300 text-center">
                 <img src="assets/images/director1.jpg" alt="Director" class="w-full h-72 object-cover">
                 <div class="p-6">
-                    <h3 class="font-bold text-primary text-lg mb-1 font-serif">Indradeo Mehta</h3>
+                    <h3 class="font-bold text-primary text-lg mb-1 font-serif">
+                        <a href="director-profile.php?id=indradeo" class="hover:text-secondary transition duration-200">Indradeo Mehta</a>
+                    </h3>
                     <p class="text-secondary text-xs font-bold uppercase tracking-wider mb-3">Director</p>
                     <p class="text-slate-500 text-sm font-light">Directing corporate governance, compliance, and strategic scaling policies.</p>
                 </div>
@@ -194,7 +196,9 @@ include 'includes/navbar.php';
             <div class="bg-white border border-slate-200/50 rounded-xl overflow-hidden shadow-sm hover:shadow transition-all duration-300 text-center">
                 <img src="assets/images/director2.jpg" alt="Director" class="w-full h-72 object-cover">
                 <div class="p-6">
-                    <h3 class="font-bold text-primary text-lg mb-1 font-serif">Rajiv Kumar</h3>
+                    <h3 class="font-bold text-primary text-lg mb-1 font-serif">
+                        <a href="director-profile.php?id=rajiv" class="hover:text-secondary transition duration-200">Rajiv Kumar</a>
+                    </h3>
                     <p class="text-secondary text-xs font-bold uppercase tracking-wider mb-3">Director</p>
                     <p class="text-slate-500 text-sm font-light">Overseeing workforce recruitment pipelines and operational integrations.</p>
                 </div>
