@@ -51,32 +51,16 @@ include 'includes/navbar.php';
                         <span class="text-sm font-semibold text-slate-500">Company Name</span>
                         <span class="text-sm font-bold text-primary text-right">IRKGP SERVICES PRIVATE LIMITED</span>
                     </div>
-                    <div class="flex justify-between items-center pb-3 border-b border-slate-200/60">
+                    <div class="flex justify-between items-center">
                         <span class="text-sm font-semibold text-slate-500">CIN</span>
                         <span class="text-sm font-mono font-bold text-secondary text-right text-xs">U78100BR2026PTC086015</span>
-                    </div>
-                    <div class="flex justify-between items-center pb-3 border-b border-slate-200/60">
-                        <span class="text-sm font-semibold text-slate-500">Date of Incorporation</span>
-                        <span class="text-sm font-bold text-primary text-right">29th June, 2026</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-semibold text-slate-500">Class of Company</span>
-                        <span class="text-sm font-bold text-primary text-right">Private Limited</span>
                     </div>
                 </div>
                 <!-- Col 2 -->
                 <div class="p-6 md:p-8 space-y-4">
                     <div class="flex justify-between items-center pb-3 border-b border-slate-200/60">
-                        <span class="text-sm font-semibold text-slate-500">Authorized Capital</span>
-                        <span class="text-sm font-bold text-primary text-right">₹15,00,000 (INR 15 Lakhs)</span>
-                    </div>
-                    <div class="flex justify-between items-center pb-3 border-b border-slate-200/60">
-                        <span class="text-sm font-semibold text-slate-500">Paid-up Capital</span>
-                        <span class="text-sm font-bold text-primary text-right">₹1,00,000 (INR 1 Lakh)</span>
-                    </div>
-                    <div class="flex justify-between items-center pb-3 border-b border-slate-200/60">
-                        <span class="text-sm font-semibold text-slate-500">Registration Jurisdiction</span>
-                        <span class="text-sm font-bold text-primary text-right">ROC Patna, Bihar</span>
+                        <span class="text-sm font-semibold text-slate-500">Class of Company</span>
+                        <span class="text-sm font-bold text-primary text-right">Private Limited</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-sm font-semibold text-slate-500">Primary Business Activity</span>
@@ -182,7 +166,6 @@ include 'includes/navbar.php';
         <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Member 1 -->
             <div class="bg-white border border-slate-200/50 rounded-xl overflow-hidden shadow-sm hover:shadow transition-all duration-300 text-center">
-                <img src="assets/images/director1.jpg" alt="Director" class="w-full h-72 object-cover">
                 <div class="p-6">
                     <h3 class="font-bold text-primary text-lg mb-1 font-serif">
                         <a href="director-profile.php?id=indradeo" class="hover:text-secondary transition duration-200">Indradeo Mehta</a>
@@ -194,7 +177,6 @@ include 'includes/navbar.php';
 
             <!-- Member 2 -->
             <div class="bg-white border border-slate-200/50 rounded-xl overflow-hidden shadow-sm hover:shadow transition-all duration-300 text-center">
-                <img src="assets/images/director2.jpg" alt="Director" class="w-full h-72 object-cover">
                 <div class="p-6">
                     <h3 class="font-bold text-primary text-lg mb-1 font-serif">
                         <a href="director-profile.php?id=rajiv" class="hover:text-secondary transition duration-200">Rajiv Kumar</a>

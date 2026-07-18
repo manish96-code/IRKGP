@@ -44,7 +44,6 @@ IRKGP/
 
 * **Company Name**: IRKGP SERVICES PRIVATE LIMITED
 * **CIN**: `U78100BR2026PTC086015`
-* **Incorporation Date**: `29th June, 2026`
 * **Registered Address**: Manjhli Chowk, Madhubani, Purnia, Bihar, India - 854301
 * **Primary Scope**: Activities of employment placement/manpower recruitment solutions
 * **Directors**: 

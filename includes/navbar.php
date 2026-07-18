@@ -47,7 +47,7 @@ if ($currentPage === 'about.php') {
             <a href="services.php" class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'services' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Services</a>
             <a href="contact.php" class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'contact' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Contact</a>
             
-            <a href="contact.php" class="px-5 py-2.5 bg-secondary hover:bg-amber-500 text-primary font-bold rounded-lg text-xs shadow-sm hover:shadow transition-all duration-300 uppercase tracking-wider">Get in Touch</a>
+            <a href="contact.php#office-details" class="px-5 py-2.5 bg-secondary hover:bg-amber-500 text-primary font-bold rounded-lg text-xs shadow-sm hover:shadow transition-all duration-300 uppercase tracking-wider">Get in Touch</a>
         </nav>
 
         <!-- Mobile Hamburg Button -->

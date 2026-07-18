@@ -13,8 +13,8 @@ include 'includes/navbar.php';
     </div>
 </section>
 
-<!-- Office Details Section (Centered, Form Removed) -->
-<section class="py-20 bg-white">
+<!-- Office Details Section-->
+<section id="office-details" class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-6">
         
         <div class="text-center mb-12 space-y-4">
@@ -33,7 +33,7 @@ include 'includes/navbar.php';
                     </div>
                     <div>
                         <h3 class="font-bold text-primary text-base mb-1 font-serif">Corporate Address</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Manjhli Chowk, Madhubani, Purnia, Bihar, India</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">Manjhli Chowk, Madhubani, Purnia, Bihar, India - 854301</p>
                     </div>
                 </div>
 
@@ -54,9 +54,10 @@ include 'includes/navbar.php';
                     <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl flex-shrink-0 shadow-sm">
                         <i class="fa-solid fa-envelope"></i>
                     </div>
-                    <div>
+                    <div class="flex flex-col">
                         <h3 class="font-bold text-primary text-base mb-1 font-serif">Email Address</h3>
                         <a href="mailto:irkgpservicespvtltd@gmail.com" class="text-slate-600 text-sm hover:text-secondary transition font-semibold">irkgpservicespvtltd@gmail.com</a>
+                        <a href="mailto:info@irkgpservices.com" class="text-slate-600 text-sm hover:text-secondary transition font-semibold">info@irkgpservices.com</a>
                     </div>
                 </div>
 
@@ -77,7 +78,7 @@ include 'includes/navbar.php';
     </div>
 </section>
 
-<!-- Google Map Embed (Madhubani, Purnia, Bihar) -->
+<!-- Google Map Embed-->
 <section class="pb-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm">

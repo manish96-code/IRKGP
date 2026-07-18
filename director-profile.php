@@ -66,10 +66,13 @@ include 'includes/navbar.php';
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <!-- Left Side: Profile Photo & Key Info -->
+            <!-- Left Side: Profile Icon & Key Info -->
             <div class="lg:col-span-4 space-y-6">
-                <div class="bg-slateBg border border-slate-200 p-4 rounded-2xl shadow-sm">
-                    <img src="<?= htmlspecialchars($director['image']) ?>" alt="<?= htmlspecialchars($director['name']) ?>" class="w-full h-80 object-cover rounded-xl shadow-inner border border-slate-300/40">
+                <div class="bg-slateBg border border-slate-200 p-8 rounded-2xl shadow-sm flex flex-col items-center justify-center min-h-[220px]">
+                    <div class="h-24 w-24 rounded-full bg-slate-200/80 text-secondary flex items-center justify-center text-4xl shadow-inner mb-4">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Executive Director</span>
                 </div>
                 <div class="bg-slateBg border border-slate-200 p-6 rounded-2xl space-y-3">
                     <h3 class="font-bold text-primary text-lg font-serif">Quick Summary</h3>

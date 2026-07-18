@@ -52,7 +52,7 @@
                 <ul class="space-y-4 text-sm text-slate-500">
                     <li class="flex items-start gap-3">
                         <i class="fa-solid fa-location-dot text-secondary mt-1"></i>
-                        <span>Manjhli Chowk, Madhubani, Purnia, Bihar</span>
+                        <span>Manjhli Chowk, Madhubani, Purnia, Bihar, India - 854301</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <i class="fa-solid fa-phone text-secondary mt-1"></i>
@@ -61,9 +61,12 @@
                             <a href="tel:+919472471486" class="text-slate-600 hover:text-secondary transition">+91 94724 71486</a>
                         </div>
                     </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fa-solid fa-envelope text-secondary"></i>
-                        <a href="mailto:irkgpservicespvtltd@gmail.com" class="text-slate-600 hover:text-secondary transition">irkgpservicespvtltd@gmail.com</a>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-envelope text-secondary mt-1"></i>
+                        <div class="flex flex-col">
+                            <a href="mailto:irkgpservicespvtltd@gmail.com" class="text-slate-600 hover:text-secondary transition">irkgpservicespvtltd@gmail.com</a>
+                            <a href="mailto:info@irkgpservices.com" class="text-slate-600 hover:text-secondary transition">info@irkgpservices.com</a>
+                        </div>
                     </li>
                 </ul>
             </div>
