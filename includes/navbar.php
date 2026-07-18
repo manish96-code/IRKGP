@@ -30,24 +30,18 @@ if ($currentPage === 'about.php') {
     <!-- Main Navigation Content -->
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <!-- Logo -->
-        <a href="index.php" class="flex items-center gap-3 group">
-            <img src="assets/images/logo.png" alt="IRKGP Logo" class="h-10 w-10 rounded-full object-cover shadow-sm">
-            <div class="flex flex-col">
-                <span id="brand-name" class="text-base sm:text-lg font-extrabold tracking-tight text-primary leading-none group-hover:text-secondary transition-colors">
-                    IRKGP <span class="text-secondary font-semibold text-base">Services</span>
-                </span>
-                <span id="brand-sub" class="text-[9px] font-bold text-slate-500 tracking-wider uppercase mt-1">Pvt. Ltd.</span>
-            </div>
+        <a href="/index.php" class="flex items-center gap-3 group">
+            <img src="/assets/images/logo.png" alt="IRKGP Logo" class="h-14 md:h-20 w-auto object-contain">
         </a>
 
         <!-- Desktop Menu Links -->
         <nav class="hidden md:flex items-center gap-8 nav-links">
-            <a href="index.php" class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'home' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Home</a>
-            <a href="about.php" class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'about' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">About</a>
-            <a href="services.php" class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'services' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Services</a>
-            <a href="contact.php" class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'contact' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Contact</a>
+            <a href="/index.php" class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'home' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Home</a>
+            <a href="/about.php" class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'about' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">About</a>
+            <a href="/services.php" class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'services' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Services</a>
+            <a href="/contact.php" class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'contact' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Contact</a>
             
-            <a href="contact.php#office-details" class="px-5 py-2.5 bg-secondary hover:bg-amber-500 text-primary font-bold rounded-lg text-xs shadow-sm hover:shadow transition-all duration-300 uppercase tracking-wider">Get in Touch</a>
+            <a href="/contact.php#office-details" class="px-5 py-2.5 bg-secondary hover:bg-amber-500 text-primary font-bold rounded-lg text-xs shadow-sm hover:shadow transition-all duration-300 uppercase tracking-wider">Get in Touch</a>
         </nav>
 
         <!-- Mobile Hamburg Button -->
@@ -58,9 +52,9 @@ if ($currentPage === 'about.php') {
 
     <!-- Mobile Drawer Links -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-3 shadow-lg">
-        <a href="index.php" class="block text-sm font-semibold py-2 <?php echo $activePage === 'home' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">Home</a>
-        <a href="about.php" class="block text-sm font-semibold py-2 <?php echo $activePage === 'about' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">About</a>
-        <a href="services.php" class="block text-sm font-semibold py-2 <?php echo $activePage === 'services' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">Services</a>
-        <a href="contact.php" class="block text-sm font-semibold py-2 <?php echo $activePage === 'contact' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">Contact</a>
+        <a href="/index.php" class="block text-sm font-semibold py-2 <?php echo $activePage === 'home' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">Home</a>
+        <a href="/about.php" class="block text-sm font-semibold py-2 <?php echo $activePage === 'about' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">About</a>
+        <a href="/services.php" class="block text-sm font-semibold py-2 <?php echo $activePage === 'services' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">Services</a>
+        <a href="/contact.php" class="block text-sm font-semibold py-2 <?php echo $activePage === 'contact' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">Contact</a>
     </div>
 </header>

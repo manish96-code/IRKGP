@@ -3,14 +3,8 @@
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
             <!-- About Company -->
             <div class="space-y-4">
-                <a href="index.php" class="flex items-center gap-3 group">
-                    <img src="assets/images/logo.png" alt="IRKGP Logo" class="h-10 w-10 rounded-full object-cover shadow-sm">
-                    <div class="flex flex-col">
-                        <span class="text-lg font-extrabold tracking-tight text-primary leading-none">
-                            IRKGP <span class="text-secondary font-semibold text-base">Services</span>
-                        </span>
-                        <span class="text-[9px] font-bold text-slate-500 tracking-wider uppercase mt-1">Pvt. Ltd.</span>
-                    </div>
+                <a href="/index.php" class="flex items-center gap-3 group">
+                    <img src="/assets/images/logo.png" alt="IRKGP Logo" class="h-16 w-auto object-contain">
                 </a>
                 <p class="text-sm leading-relaxed text-slate-500">
                     IRKGP Services Pvt. Ltd. connects top-tier talent with industry-leading companies. Registered in Bihar, serving businesses nationwide.
@@ -28,10 +22,10 @@
             <div>
                 <h4 class="text-slate-800 font-bold text-base mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-8 after:bg-secondary">Quick Links</h4>
                 <ul class="space-y-3 text-sm">
-                    <li><a href="index.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Home</a></li>
-                    <li><a href="about.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">About Us</a></li>
-                    <li><a href="services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Our Services</a></li>
-                    <li><a href="contact.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Contact Us</a></li>
+                    <li><a href="/index.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Home</a></li>
+                    <li><a href="/about.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">About Us</a></li>
+                    <li><a href="/services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Our Services</a></li>
+                    <li><a href="/contact.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -39,10 +33,10 @@
             <div>
                 <h4 class="text-slate-800 font-bold text-base mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-8 after:bg-secondary">Services</h4>
                 <ul class="space-y-3 text-sm">
-                    <li><a href="services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Recruitment Services</a></li>
-                    <li><a href="services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Staffing Solutions</a></li>
-                    <li><a href="services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">HR Consulting</a></li>
-                    <li><a href="services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Workforce Management</a></li>
+                    <li><a href="/services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Recruitment Services</a></li>
+                    <li><a href="/services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Staffing Solutions</a></li>
+                    <li><a href="/services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">HR Consulting</a></li>
+                    <li><a href="/services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Workforce Management</a></li>
                 </ul>
             </div>
 
