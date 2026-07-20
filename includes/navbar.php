@@ -28,9 +28,9 @@ if ($currentPage === 'about.php') {
     </div>
 
     <!-- Main Navigation Content -->
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-20 flex items-center justify-between">
         <!-- Logo -->
-        <a href="/index.php" class="flex items-center gap-3 group">
+        <a href="/index.php" class="flex items-center group">
             <img src="/assets/images/logo.png" alt="IRKGP Logo" class="h-20 md:h-24 w-auto object-contain">
         </a>
 

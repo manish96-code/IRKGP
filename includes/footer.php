@@ -1,9 +1,9 @@
     <!-- Footer -->
-    <footer class="bg-slate-100 border-t border-slate-200 text-slate-600 py-16 mt-auto">
+    <footer class="bg-slate-100 border-t border-slate-200 text-slate-600 py-8 mt-auto">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
             <!-- About Company -->
-            <div class="space-y-4">
-                <a href="/index.php" class="flex items-center gap-3 group">
+            <div class="space-y-2">
+                <a href="/index.php" class="flex items-center group">
                     <img src="/assets/images/logo.png" alt="IRKGP Logo" class="h-16 w-auto object-contain">
                 </a>
                 <p class="text-sm leading-relaxed text-slate-500">
@@ -57,9 +57,9 @@
                     </li>
                     <li class="flex items-start gap-3">
                         <i class="fa-solid fa-envelope text-secondary mt-1"></i>
-                        <div class="flex flex-col">
-                            <a href="mailto:irkgpservicespvtltd@gmail.com" class="text-slate-600 hover:text-secondary transition">irkgpservicespvtltd@gmail.com</a>
-                            <a href="mailto:info@irkgpservices.com" class="text-slate-600 hover:text-secondary transition">info@irkgpservices.com</a>
+                        <div class="flex flex-col min-w-0">
+                            <a href="mailto:irkgpservicespvtltd@gmail.com" class="text-slate-600 hover:text-secondary transition break-all">irkgpservicespvtltd@gmail.com</a>
+                            <a href="mailto:info@irkgpservices.com" class="text-slate-600 hover:text-secondary transition break-all">info@irkgpservices.com</a>
                         </div>
                     </li>
                 </ul>

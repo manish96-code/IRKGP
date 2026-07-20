@@ -54,10 +54,10 @@ include 'includes/navbar.php';
                     <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl flex-shrink-0 shadow-sm">
                         <i class="fa-solid fa-envelope"></i>
                     </div>
-                    <div class="flex flex-col">
+                    <div class="flex flex-col min-w-0">
                         <h3 class="font-bold text-primary text-base mb-1 font-serif">Email Address</h3>
-                        <a href="mailto:irkgpservicespvtltd@gmail.com" class="text-slate-600 text-sm hover:text-secondary transition font-semibold">irkgpservicespvtltd@gmail.com</a>
-                        <a href="mailto:info@irkgpservices.com" class="text-slate-600 text-sm hover:text-secondary transition font-semibold">info@irkgpservices.com</a>
+                        <a href="mailto:irkgpservicespvtltd@gmail.com" class="text-slate-600 text-sm hover:text-secondary transition font-semibold break-all">irkgpservicespvtltd@gmail.com</a>
+                        <a href="mailto:info@irkgpservices.com" class="text-slate-600 text-sm hover:text-secondary transition font-semibold break-all">info@irkgpservices.com</a>
                     </div>
                 </div>
 
