@@ -34,7 +34,7 @@ if ($currentPage === 'about.php') {
     <div class="max-w-7xl mx-auto px-3 h-20 flex items-center justify-between">
         <!-- Logo -->
         <a href="/index.php" class="flex items-center gap-3 group">
-            <img src="/assets/images/logo.png" alt="IRKGP Logo" class="h-20 md:h-24 w-auto object-contain">
+            <img src="/assets/images/newlogo.png" alt="IRKGP Logo" class="h-20 md:h-24 w-auto object-contain">
         </a>
 
         <!-- Desktop Menu Links -->

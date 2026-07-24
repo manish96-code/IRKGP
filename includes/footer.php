@@ -4,7 +4,7 @@
             <!-- About Company -->
             <div class="space-y-2">
                 <a href="/index.php" class="flex items-center group">
-                    <img src="/assets/images/logo.png" alt="IRKGP Logo" class="h-16 w-auto object-contain">
+                    <img src="/assets/images/newlogo.png" alt="IRKGP Logo" class="h-16 w-auto object-contain">
                 </a>
                 <p class="text-sm leading-relaxed text-slate-500">
                     IRKGP Services Pvt. Ltd. connects top-tier talent with industry-leading companies. Registered in Bihar, serving businesses nationwide.
