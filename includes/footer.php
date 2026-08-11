@@ -49,13 +49,6 @@
                         <span>Manjhli Chowk, Madhubani, Purnia, Bihar, India - 854301</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-phone text-secondary mt-1"></i>
-                        <div class="flex flex-col">
-                            <a href="tel:+919661307327" class="text-slate-600 hover:text-secondary transition">+91 96613 07327</a>
-                            <a href="tel:+919472471486" class="text-slate-600 hover:text-secondary transition">+91 94724 71486</a>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-3">
                         <i class="fa-solid fa-envelope text-secondary mt-1"></i>
                         <div class="flex flex-col min-w-0">
                             <a href="mailto:irkgpservicespvtltd@gmail.com" class="text-slate-600 hover:text-secondary transition break-all">irkgpservicespvtltd@gmail.com</a>
@@ -72,6 +65,14 @@
             <p>Designed with <i class="fa-solid fa-heart text-secondary"></i> by <a href="https://www.comestro.com/" target="_blank" rel="noopener" class="hover:text-secondary transition font-semibold">Comestro Techlabs Pvt Ltd</a></p>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/917384779569" target="_blank" rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 w-14 h-14 hover:w-auto hover:px-4 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center group"
+       aria-label="Chat on WhatsApp" title="Connect on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl shrink-0"></i>
+        <span class="hidden group-hover:inline-block ml-2 text-xs font-bold whitespace-nowrap">Chat with Us</span>
+    </a>
 
     <!-- Main custom Javascript -->
     <script src="/assets/js/main.js"></script>

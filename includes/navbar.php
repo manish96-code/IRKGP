@@ -22,10 +22,10 @@ if ($currentPage === 'about.php') {
                     Recruitment Solutions</span>
             </div>
             <div class="flex items-center gap-2.5">
-                <a href="tel:+919661307327" class="hover:text-secondary transition"><i
-                        class="fa-solid fa-phone text-secondary mr-1.5"></i> +91 96613 07327</a>
-                <span class="text-slate-300">|</span>
-                <a href="tel:+919472471486" class="hover:text-secondary transition">+91 94724 71486</a>
+                <a href="https://wa.me/917384779569" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-600 transition flex items-center gap-1.5 font-semibold text-slate-700">
+                    <i class="fa-brands fa-whatsapp text-emerald-500 text-base"></i>
+                    <span>Connect on WhatsApp</span>
+                </a>
             </div>
         </div>
     </div>
