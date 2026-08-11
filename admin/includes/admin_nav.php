@@ -54,7 +54,6 @@ try {
     <!-- Mobile Top Header Bar -->
     <div class="md:hidden bg-slate-900 text-white px-4 py-3 flex items-center justify-between border-b border-slate-800 sticky top-0 z-50">
         <a href="/admin/index.php" class="flex items-center gap-2.5">
-            <img src="/assets/images/newlogo.png" alt="IRKGP Logo" class="h-7 w-auto object-contain">
             <span class="font-bold text-sm text-white tracking-tight">IRKGP Portal</span>
         </a>
         <button id="sidebar-toggle-btn" class="text-slate-300 hover:text-white p-1.5 focus:outline-none">
@@ -70,12 +69,9 @@ try {
         
         <!-- Sidebar Brand Header -->
         <div class="px-6 py-5 border-b border-slate-800/80 flex items-center justify-between">
-            <a href="/admin/index.php" class="flex items-center gap-3 group">
-                <img src="/assets/images/newlogo.png" alt="IRKGP Logo" class="h-9 w-auto object-contain transition group-hover:scale-105">
-                <div>
-                    <span class="font-bold text-sm text-white block tracking-tight leading-tight">IRKGP Portal</span>
-                    <span class="text-[10px] text-amber-400 font-semibold uppercase tracking-wider block">Recruitment Control</span>
-                </div>
+            <a href="/admin/index.php" class="block group">
+                <span class="font-bold text-base text-white block tracking-tight leading-tight">IRKGP Portal</span>
+                <span class="text-[10px] text-amber-400 font-semibold uppercase tracking-wider block mt-0.5">Recruitment Control</span>
             </a>
         </div>
 
@@ -134,12 +130,10 @@ try {
                 </div>
             </div>
             
-            <div class="grid grid-cols-2 gap-2 pt-1">
-                <a href="/career.php" target="_blank" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-[11px] font-medium text-center transition border border-slate-700 flex items-center justify-center gap-1">
-                    <i class="fa-solid fa-globe text-amber-400 text-[10px]"></i> Career Page
-                </a>
-                <a href="/admin/logout.php" class="px-2.5 py-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 text-[11px] font-bold text-center transition border border-rose-500/30 flex items-center justify-center gap-1">
-                    <i class="fa-solid fa-power-off text-[10px]"></i> Logout
+            <div class="pt-1">
+                <a href="/admin/logout.php" class="w-full px-2.5 py-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 text-xs font-bold text-center transition border border-rose-500/30 flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-power-off text-xs"></i>
+                    <span>Logout</span>
                 </a>
             </div>
         </div>
@@ -161,10 +155,6 @@ try {
                     <i class="fa-regular fa-calendar text-amber-500 text-xs"></i> 
                     <?php echo date('D, d M Y'); ?>
                 </span>
-                <a href="/career.php" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-amber-400 hover:text-slate-950 text-slate-700 text-xs font-bold transition flex items-center gap-1.5">
-                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    <span>Live Career Page</span>
-                </a>
             </div>
         </header>
 

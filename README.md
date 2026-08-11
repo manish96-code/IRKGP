@@ -27,7 +27,7 @@ IRKGP/
 │   │   └── main.js           # intersection observers for stats count-up & mobile menu button toggles
 │   └── images/               # Localized image folder for offline execution
 │       ├── logo.png          # Cropped gold corporate brand logo emblem
-│       ├── hero-bg.jpg       # Home screen backdrop
+│       ├── hero-bg-new.jpg       # Home screen backdrop
 │       ├── about-preview.jpg # Corporate meeting background
 │       ├── about-banner.jpg  # About page top cover
 │       ├── services-banner.jpg # Services page top cover

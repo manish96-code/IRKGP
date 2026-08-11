@@ -1,5 +1,6 @@
 <?php
 // Database Configuration for IRKGP Services
+// Admin Access Credentials: Email = admin@irkgpservices.com | Password = Admin@123
 define('DB_HOST', '127.0.0.1');
 define('DB_USER', 'root');
 define('DB_PASS', 'Manish@9661');

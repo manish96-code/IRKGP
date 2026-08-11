@@ -28,10 +28,10 @@ if ($currentPage === 'about.php') {
     </div>
 
     <!-- Main Navigation Content -->
-    <div class="max-w-7xl mx-auto px-3 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-3 h-16 flex items-center justify-between">
         <!-- Logo -->
         <a href="/index.php" class="flex items-center gap-3 group">
-            <img src="/assets/images/irkgp-logo.png?v=5" alt="IRKGP Logo" class="h-20 md:h-20 w-auto object-contain">
+            <img src="/assets/images/irkgp-logo.png?v=5" alt="IRKGP Logo" class="h-16 md:h-16 w-auto object-contain">
         </a>
 
         <!-- Desktop Menu Links -->
