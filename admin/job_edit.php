@@ -106,14 +106,15 @@ include __DIR__ . '/includes/admin_nav.php';
 ?>
 
 <!-- Header -->
-<div class="flex items-center justify-between gap-4 mb-8">
+<div class="flex items-center justify-between gap-4 pb-2 border-b border-slate-200/60">
     <div>
-        <h1 class="text-2xl sm:text-3xl font-extrabold font-serif text-primary tracking-tight">Edit Job Opening #<?php echo $job['id']; ?></h1>
-        <p class="text-slate-500 text-xs sm:text-sm mt-1">Update role details and publication status.</p>
+        <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Edit Job Opening #<?php echo $job['id']; ?></h1>
+        <p class="text-slate-500 text-xs sm:text-sm mt-0.5">Update role details and publication status.</p>
     </div>
     <div>
-        <a href="/admin/index.php" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs rounded-xl transition flex items-center gap-1.5">
-            <i class="fa-solid fa-arrow-left"></i> Back to Jobs
+        <a href="/admin/index.php" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition flex items-center gap-1.5 border border-slate-200">
+            <i class="fa-solid fa-arrow-left text-[10px]"></i>
+            <span>Back to Jobs</span>
         </a>
     </div>
 </div>
