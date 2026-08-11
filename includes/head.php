@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth h-full">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo isset($pageTitle) ? $pageTitle . " | IRKGP SERVICES PVT. LTD." : "IRKGP SERVICES PVT. LTD. | Manpower Recruitment & Management Solutions"; ?></title>
-    
+    <title>
+        <?php echo isset($pageTitle) ? $pageTitle . " | IRKGP SERVICES PVT. LTD." : "IRKGP SERVICES PVT. LTD. | Manpower Recruitment & Management Solutions"; ?>
+    </title>
+
     <!-- Meta tags for SEO -->
-    <meta name="description" content="IRKGP Services Pvt. Ltd. provides expert manpower recruitment and HR management solutions. Registered in Bihar, connecting organizations with skilled candidates.">
-    <meta name="keywords" content="recruitment, manpower bihar, manpower solutions, HR consultancy, staffing solutions, hiring agency, Bihar recruitment">
+    <meta name="description"
+        content="IRKGP Services Pvt. Ltd. provides expert manpower recruitment and HR management solutions. Registered in Bihar, connecting organizations with skilled candidates.">
+    <meta name="keywords"
+        content="recruitment, manpower bihar, manpower solutions, HR consultancy, staffing solutions, hiring agency, Bihar recruitment">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://irkgpservices.com/">
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/images/newlogo.png">
-    <link rel="apple-touch-icon" href="/assets/images/newlogo.png">
-    
+    <link rel="icon" type="image/png" href="/assets/images/irkgp-logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/irkgp-logo.png">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://irkgpservices.com/">
     <meta property="og:title" content="IRKGP SERVICES PVT. LTD. | Manpower Recruitment & Management Solutions">
-    <meta property="og:description" content="IRKGP Services Pvt. Ltd. provides expert manpower recruitment and HR management solutions. Registered in Bihar, connecting organizations with skilled candidates.">
-    <meta property="og:image" content="https://irkgpservices.com/assets/images/newlogo.png">
+    <meta property="og:description"
+        content="IRKGP Services Pvt. Ltd. provides expert manpower recruitment and HR management solutions. Registered in Bihar, connecting organizations with skilled candidates.">
+    <meta property="og:image" content="https://irkgpservices.com/assets/images/irkgp-logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://irkgpservices.com/">
     <meta property="twitter:title" content="IRKGP SERVICES PVT. LTD. | Manpower Recruitment Solutions">
-    <meta property="twitter:description" content="IRKGP Services Pvt. Ltd. provides expert manpower recruitment and HR management solutions.">
-    <meta property="twitter:image" content="https://irkgpservices.com/assets/images/newlogo.png">
-    
+    <meta property="twitter:description"
+        content="IRKGP Services Pvt. Ltd. provides expert manpower recruitment and HR management solutions.">
+    <meta property="twitter:image" content="https://irkgpservices.com/assets/images/irkgp-logo.png">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
+
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -56,8 +65,9 @@
             }
         }
     </script>
-    
+
     <!-- Custom stylesheet overrides -->
     <link rel="stylesheet" href="/assets/css/custom.css">
 </head>
+
 <body class="bg-slateBg text-[#374151] flex flex-col min-h-screen antialiased">

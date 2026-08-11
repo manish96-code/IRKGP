@@ -4,7 +4,7 @@
         <!-- About Company -->
         <div class="space-y-2">
             <a href="/index.php" class="flex items-center group">
-                <img src="/assets/images/newlogo.png" alt="IRKGP Logo" class="h-16 w-auto object-contain">
+                <img src="/assets/images/irkgp-logo.png?v=5" alt="IRKGP Logo" class="h-16 w-auto object-contain">
             </a>
             <p class="text-sm leading-relaxed text-slate-500">
                 IRKGP Services Pvt. Ltd. connects top-tier talent with industry-leading companies. Registered in Bihar,
@@ -94,11 +94,8 @@
 
     <!-- Copyright -->
     <div
-        class="max-w-7xl mx-auto px-6 border-t border-slate-200 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-medium">
+        class="max-w-7xl mx-auto px-6 border-t border-slate-200 mt-12 pt-8 text-center text-xs text-slate-400 font-medium">
         <p>&copy; <?php echo date('Y'); ?> IRKGP Services Pvt. Ltd. All rights reserved.</p>
-        <p>Designed with <i class="fa-solid fa-heart text-secondary"></i> by <a href="https://www.comestro.com/"
-                target="_blank" rel="noopener" class="hover:text-secondary transition font-semibold">Comestro Techlabs
-                Pvt Ltd</a></p>
     </div>
 </footer>
 
@@ -114,6 +111,7 @@
         s0.parentNode.insertBefore(s1, s0);
     })();
 </script>
+<!--End of Tawk.to Script-->
 
 <!-- Main custom Javascript -->
 <script src="/assets/js/main.js"></script>

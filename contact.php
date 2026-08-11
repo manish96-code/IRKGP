@@ -36,8 +36,6 @@ include 'includes/navbar.php';
                         <p class="text-slate-600 text-sm leading-relaxed">Manjhli Chowk, Madhubani, Purnia, Bihar, India - 854301</p>
                     </div>
                 </div>
-
-                <!-- WhatsApp -->
              
                 <!-- Email -->
                 <div class="flex gap-4 items-start p-4 hover:bg-slate-50 rounded-xl transition duration-200">
