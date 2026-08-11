@@ -21,12 +21,7 @@ if ($currentPage === 'about.php') {
                 <span class="hidden md:inline"><i class="fa-solid fa-briefcase text-secondary mr-1.5"></i> Manpower
                     Recruitment Solutions</span>
             </div>
-            <div class="flex items-center gap-2.5">
-                <a href="https://wa.me/917384779569" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-600 transition flex items-center gap-1.5 font-semibold text-slate-700">
-                    <i class="fa-brands fa-whatsapp text-emerald-500 text-base"></i>
-                    <span>Connect on WhatsApp</span>
-                </a>
-            </div>
+          
         </div>
     </div>
 
@@ -71,4 +66,7 @@ if ($currentPage === 'about.php') {
         <a href="/contact.php"
             class="block text-sm font-semibold py-2 <?php echo $activePage === 'contact' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">Contact</a>
     </div>
+
+  
+<!--End of Tawk.to Script-->
 </header>

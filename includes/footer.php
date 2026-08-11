@@ -1,80 +1,122 @@
-    <!-- Footer -->
-    <footer class="bg-slate-100 border-t border-slate-200 text-slate-600 py-8 mt-auto">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-            <!-- About Company -->
-            <div class="space-y-2">
-                <a href="/index.php" class="flex items-center group">
-                    <img src="/assets/images/newlogo.png" alt="IRKGP Logo" class="h-16 w-auto object-contain">
-                </a>
-                <p class="text-sm leading-relaxed text-slate-500">
-                    IRKGP Services Pvt. Ltd. connects top-tier talent with industry-leading companies. Registered in Bihar, serving businesses nationwide.
-                </p>
-                <!-- Social Media Icons -->
-                <div class="flex gap-4 pt-2">
-                    <a href="#" class="h-9 w-9 bg-slate-200 hover:bg-secondary text-slate-600 hover:text-primary flex items-center justify-center rounded-lg transition-colors duration-200" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-sm"></i></a>
-                    <a href="#" class="h-9 w-9 bg-slate-200 hover:bg-secondary text-slate-600 hover:text-primary flex items-center justify-center rounded-lg transition-colors duration-200" aria-label="Twitter"><i class="fa-brands fa-x-twitter text-sm"></i></a>
-                    <a href="#" class="h-9 w-9 bg-slate-200 hover:bg-secondary text-slate-600 hover:text-primary flex items-center justify-center rounded-lg transition-colors duration-200" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
-                    <a href="#" class="h-9 w-9 bg-slate-200 hover:bg-secondary text-slate-600 hover:text-primary flex items-center justify-center rounded-lg transition-colors duration-200" aria-label="Instagram"><i class="fa-brands fa-instagram text-sm"></i></a>
-                </div>
-            </div>
-
-            <!-- Quick Links -->
-            <div>
-                <h4 class="text-slate-800 font-bold text-base mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-8 after:bg-secondary">Quick Links</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="/index.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Home</a></li>
-                    <li><a href="/about.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">About Us</a></li>
-                    <li><a href="/services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Our Services</a></li>
-                    <li><a href="/contact.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <!-- Services Links -->
-            <div>
-                <h4 class="text-slate-800 font-bold text-base mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-8 after:bg-secondary">Services</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="/services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Recruitment Services</a></li>
-                    <li><a href="/services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Staffing Solutions</a></li>
-                    <li><a href="/services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">HR Consulting</a></li>
-                    <li><a href="/services.php" class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Workforce Management</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact Details -->
-            <div>
-                <h4 class="text-slate-800 font-bold text-base mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-8 after:bg-secondary">Get In Touch</h4>
-                <ul class="space-y-4 text-sm text-slate-500">
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-location-dot text-secondary mt-1"></i>
-                        <span>Manjhli Chowk, Madhubani, Purnia, Bihar, India - 854301</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-envelope text-secondary mt-1"></i>
-                        <div class="flex flex-col min-w-0">
-                            <a href="mailto:irkgpservicespvtltd@gmail.com" class="text-slate-600 hover:text-secondary transition break-all">irkgpservicespvtltd@gmail.com</a>
-                            <a href="mailto:info@irkgpservices.com" class="text-slate-600 hover:text-secondary transition break-all">info@irkgpservices.com</a>
-                        </div>
-                    </li>
-                </ul>
+<!-- Footer -->
+<footer class="bg-slate-100 border-t border-slate-200 text-slate-600 py-8 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+        <!-- About Company -->
+        <div class="space-y-2">
+            <a href="/index.php" class="flex items-center group">
+                <img src="/assets/images/newlogo.png" alt="IRKGP Logo" class="h-16 w-auto object-contain">
+            </a>
+            <p class="text-sm leading-relaxed text-slate-500">
+                IRKGP Services Pvt. Ltd. connects top-tier talent with industry-leading companies. Registered in Bihar,
+                serving businesses nationwide.
+            </p>
+            <!-- Social Media Icons -->
+            <div class="flex gap-4 pt-2">
+                <a href="#"
+                    class="h-9 w-9 bg-slate-200 hover:bg-secondary text-slate-600 hover:text-primary flex items-center justify-center rounded-lg transition-colors duration-200"
+                    aria-label="Facebook"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                <a href="#"
+                    class="h-9 w-9 bg-slate-200 hover:bg-secondary text-slate-600 hover:text-primary flex items-center justify-center rounded-lg transition-colors duration-200"
+                    aria-label="Twitter"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+                <a href="#"
+                    class="h-9 w-9 bg-slate-200 hover:bg-secondary text-slate-600 hover:text-primary flex items-center justify-center rounded-lg transition-colors duration-200"
+                    aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                <a href="#"
+                    class="h-9 w-9 bg-slate-200 hover:bg-secondary text-slate-600 hover:text-primary flex items-center justify-center rounded-lg transition-colors duration-200"
+                    aria-label="Instagram"><i class="fa-brands fa-instagram text-sm"></i></a>
             </div>
         </div>
 
-        <!-- Copyright -->
-        <div class="max-w-7xl mx-auto px-6 border-t border-slate-200 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-medium">
-            <p>&copy; <?php echo date('Y'); ?> IRKGP Services Pvt. Ltd. All rights reserved.</p>
-            <p>Designed with <i class="fa-solid fa-heart text-secondary"></i> by <a href="https://www.comestro.com/" target="_blank" rel="noopener" class="hover:text-secondary transition font-semibold">Comestro Techlabs Pvt Ltd</a></p>
+        <!-- Quick Links -->
+        <div>
+            <h4
+                class="text-slate-800 font-bold text-base mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-8 after:bg-secondary">
+                Quick Links</h4>
+            <ul class="space-y-3 text-sm">
+                <li><a href="/index.php"
+                        class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Home</a>
+                </li>
+                <li><a href="/about.php"
+                        class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">About
+                        Us</a></li>
+                <li><a href="/services.php"
+                        class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Our
+                        Services</a></li>
+                <li><a href="/contact.php"
+                        class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Contact
+                        Us</a></li>
+            </ul>
         </div>
-    </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/917384779569" target="_blank" rel="noopener noreferrer" 
-       class="fixed bottom-6 right-6 z-50 w-14 h-14 hover:w-auto hover:px-4 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center group"
-       aria-label="Chat on WhatsApp" title="Connect on WhatsApp">
-        <i class="fa-brands fa-whatsapp text-3xl shrink-0"></i>
-        <span class="hidden group-hover:inline-block ml-2 text-xs font-bold whitespace-nowrap">Chat with Us</span>
-    </a>
+        <!-- Services Links -->
+        <div>
+            <h4
+                class="text-slate-800 font-bold text-base mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-8 after:bg-secondary">
+                Services</h4>
+            <ul class="space-y-3 text-sm">
+                <li><a href="/services.php"
+                        class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Recruitment
+                        Services</a></li>
+                <li><a href="/services.php"
+                        class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Staffing
+                        Solutions</a></li>
+                <li><a href="/services.php"
+                        class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">HR
+                        Consulting</a></li>
+                <li><a href="/services.php"
+                        class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Workforce
+                        Management</a></li>
+            </ul>
+        </div>
 
-    <!-- Main custom Javascript -->
-    <script src="/assets/js/main.js"></script>
+        <!-- Contact Details -->
+        <div>
+            <h4
+                class="text-slate-800 font-bold text-base mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-8 after:bg-secondary">
+                Get In Touch</h4>
+            <ul class="space-y-4 text-sm text-slate-500">
+                <li class="flex items-start gap-3">
+                    <i class="fa-solid fa-location-dot text-secondary mt-1"></i>
+                    <span>Manjhli Chowk, Madhubani, Purnia, Bihar, India - 854301</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fa-solid fa-envelope text-secondary mt-1"></i>
+                    <div class="flex flex-col min-w-0">
+                        <a href="mailto:irkgpservicespvtltd@gmail.com"
+                            class="text-slate-600 hover:text-secondary transition break-all">irkgpservicespvtltd@gmail.com</a>
+                        <a href="mailto:info@irkgpservices.com"
+                            class="text-slate-600 hover:text-secondary transition break-all">info@irkgpservices.com</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div
+        class="max-w-7xl mx-auto px-6 border-t border-slate-200 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-medium">
+        <p>&copy; <?php echo date('Y'); ?> IRKGP Services Pvt. Ltd. All rights reserved.</p>
+        <p>Designed with <i class="fa-solid fa-heart text-secondary"></i> by <a href="https://www.comestro.com/"
+                target="_blank" rel="noopener" class="hover:text-secondary transition font-semibold">Comestro Techlabs
+                Pvt Ltd</a></p>
+    </div>
+</footer>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6a7ac6ef8125bb1d4895a8c0/1jvnpi6u2';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+
+<!-- Main custom Javascript -->
+<script src="/assets/js/main.js"></script>
 </body>
+
 </html>

@@ -38,16 +38,7 @@ include 'includes/navbar.php';
                 </div>
 
                 <!-- WhatsApp -->
-                <div class="flex gap-4 items-start p-4 hover:bg-slate-50 rounded-xl transition duration-200">
-                    <div class="h-12 w-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl flex-shrink-0 shadow-sm">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-                    <div class="flex flex-col">
-                        <h3 class="font-bold text-primary text-base mb-1 font-serif">WhatsApp Support</h3>
-                        <a href="https://wa.me/917384779569" target="_blank" rel="noopener noreferrer" class="text-emerald-600 text-sm hover:underline transition font-semibold">Connect on WhatsApp &rarr;</a>
-                    </div>
-                </div>
-
+             
                 <!-- Email -->
                 <div class="flex gap-4 items-start p-4 hover:bg-slate-50 rounded-xl transition duration-200">
                     <div class="h-12 w-12 rounded-xl bg-gold-50 text-secondary flex items-center justify-center text-xl flex-shrink-0 shadow-sm">
