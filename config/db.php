@@ -10,11 +10,13 @@ function getDBConnection() {
 
     if ($pdo === null) {
         try {
-            // Direct connection to existing database
             $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]);
+
+            // Ensure Applications Table exists
+            ensureApplicationsTable($pdo);
 
         } catch (PDOException $e) {
             die("Database Connection Failure: " . $e->getMessage());
@@ -24,25 +26,35 @@ function getDBConnection() {
     return $pdo;
 }
 
+function ensureApplicationsTable($pdo) {
+    $pdo->exec("CREATE TABLE IF NOT EXISTS `job_applications` (
+        `id` INT AUTO_INCREMENT PRIMARY KEY,
+        `job_id` INT DEFAULT NULL,
+        `applicant_name` VARCHAR(150) NOT NULL,
+        `email` VARCHAR(150) NOT NULL,
+        `phone` VARCHAR(30) NOT NULL,
+        `experience` VARCHAR(50) DEFAULT NULL,
+        `notes` TEXT DEFAULT NULL,
+        `status` ENUM('new', 'reviewed', 'shortlisted', 'rejected') DEFAULT 'new',
+        `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (`job_id`) REFERENCES `jobs`(`id`) ON DELETE SET NULL
+    ) ENGINE=InnoDB;");
+}
+
 /*
 // Reference Code for Fresh Installation / Setup (Commented out):
-// Used when database "irkgp_db" or tables do not exist yet on a new server.
-
 function initDatabaseAndTables() {
-    // 1. Connect without DB_NAME to create database if not exists
     $serverPdo = new PDO("mysql:host=" . DB_HOST, DB_USER, DB_PASS, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
     $serverPdo->exec("CREATE DATABASE IF NOT EXISTS `" . DB_NAME . "` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
 
-    // 2. Connect to irkgp_db
     $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
 
-    // 3. Admins Table Creation
     $pdo->exec("CREATE TABLE IF NOT EXISTS `admins` (
         `id` INT AUTO_INCREMENT PRIMARY KEY,
         `name` VARCHAR(100) NOT NULL,
@@ -52,19 +64,6 @@ function initDatabaseAndTables() {
         `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     ) ENGINE=InnoDB;");
 
-    // Seed default admin if empty
-    $stmt = $pdo->query("SELECT COUNT(*) FROM `admins`");
-    if ($stmt->fetchColumn() == 0) {
-        $defaultPassword = password_hash('Admin@123', PASSWORD_BCRYPT);
-        $insertStmt = $pdo->prepare("INSERT INTO `admins` (`name`, `email`, `password`, `role`) VALUES (:name, :email, :pass, 'admin')");
-        $insertStmt->execute([
-            ':name' => 'IRKGP Admin',
-            ':email' => 'admin@irkgpservices.com',
-            ':pass' => $defaultPassword
-        ]);
-    }
-
-    // 4. Jobs Table Creation
     $pdo->exec("CREATE TABLE IF NOT EXISTS `jobs` (
         `id` INT AUTO_INCREMENT PRIMARY KEY,
         `title` VARCHAR(150) NOT NULL,
@@ -76,6 +75,18 @@ function initDatabaseAndTables() {
         `status` ENUM('active', 'inactive') DEFAULT 'active',
         `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB;");
+
+    $pdo->exec("CREATE TABLE IF NOT EXISTS `job_applications` (
+        `id` INT AUTO_INCREMENT PRIMARY KEY,
+        `job_id` INT DEFAULT NULL,
+        `applicant_name` VARCHAR(150) NOT NULL,
+        `email` VARCHAR(150) NOT NULL,
+        `phone` VARCHAR(30) NOT NULL,
+        `experience` VARCHAR(50) DEFAULT NULL,
+        `notes` TEXT DEFAULT NULL,
+        `status` ENUM('new', 'reviewed', 'shortlisted', 'rejected') DEFAULT 'new',
+        `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     ) ENGINE=InnoDB;");
 }
 */

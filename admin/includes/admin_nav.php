@@ -4,13 +4,16 @@ require_once __DIR__ . '/../../config/db.php';
 
 $adminActivePage = $adminActivePage ?? 'jobs';
 
-// Fetch quick count for active jobs badge
+// Fetch quick counts for sidebar badges
 $navJobsCount = 0;
+$navAppsCount = 0;
 try {
     $pdoNav = getDBConnection();
     $navJobsCount = $pdoNav->query("SELECT COUNT(*) FROM `jobs` WHERE `status` = 'active'")->fetchColumn();
+    $navAppsCount = $pdoNav->query("SELECT COUNT(*) FROM `job_applications` WHERE `status` = 'new'")->fetchColumn();
 } catch (Exception $e) {
     $navJobsCount = 0;
+    $navAppsCount = 0;
 }
 ?>
 <!DOCTYPE html>
@@ -90,6 +93,21 @@ try {
                 <a href="/admin/job_create.php" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 <?php echo $adminActivePage === 'job_create' ? 'bg-secondary text-primary font-bold shadow-md' : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'; ?>">
                     <i class="fa-solid fa-plus-circle text-sm text-secondary"></i>
                     <span>Add New Job</span>
+                </a>
+            </div>
+
+            <!-- Group: Candidate Submissions -->
+            <div class="space-y-1">
+                <p class="px-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Candidate Submissions</p>
+                
+                <a href="/admin/applications.php" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 <?php echo $adminActivePage === 'applications' ? 'bg-secondary text-primary font-bold shadow-md' : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'; ?>">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-users-viewfinder text-sm"></i>
+                        <span>Job Applications</span>
+                    </div>
+                    <?php if (isset($navAppsCount) && $navAppsCount > 0): ?>
+                        <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-blue-500 text-white animate-pulse"><?php echo $navAppsCount; ?> New</span>
+                    <?php endif; ?>
                 </a>
             </div>
         </div>

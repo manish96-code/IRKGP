@@ -4,13 +4,21 @@ require_once __DIR__ . '/config/db.php';
 include 'includes/head.php';
 include 'includes/navbar.php';
 
-// Fetch active jobs from database
+// Fetch active jobs and unique categories from database
 try {
     $pdo = getDBConnection();
     $stmt = $pdo->query("SELECT * FROM `jobs` WHERE `status` = 'active' ORDER BY `created_at` DESC");
     $dbJobs = $stmt->fetchAll();
+
+    $stmtCats = $pdo->query("SELECT DISTINCT `category` FROM `jobs` WHERE `status` = 'active'");
+    $dbCategories = $stmtCats->fetchAll(PDO::FETCH_COLUMN);
+
+    $stmtTypes = $pdo->query("SELECT DISTINCT `job_type` FROM `jobs` WHERE `status` = 'active'");
+    $dbJobTypes = $stmtTypes->fetchAll(PDO::FETCH_COLUMN);
 } catch (Exception $e) {
     $dbJobs = [];
+    $dbCategories = [];
+    $dbJobTypes = [];
 }
 ?>
 
@@ -81,12 +89,14 @@ try {
             <div>
                 <select id="category-filter" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-secondary focus:bg-white transition text-slate-700 font-medium">
                     <option value="all">All Categories</option>
-                    <option value="hr">HR & Recruitment</option>
-                    <option value="operations">Operations & Management</option>
-                    <option value="sales">Sales & Business Development</option>
-                    <option value="it">IT & Software</option>
-                    <option value="finance">Finance & Accounts</option>
-                    <option value="admin">Administration</option>
+                    <?php 
+                    $standardCats = ['Parichari (Attendant)', 'Data Entry Operator', 'Clerk', 'Lipik'];
+                    $allCats = array_unique(array_merge($standardCats, $dbCategories ?? []));
+                    foreach ($allCats as $catName):
+                        if (empty(trim($catName))) continue;
+                    ?>
+                        <option value="<?php echo htmlspecialchars($catName); ?>"><?php echo htmlspecialchars($catName); ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
 
@@ -94,9 +104,14 @@ try {
             <div>
                 <select id="jobtype-filter" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-secondary focus:bg-white transition text-slate-700 font-medium">
                     <option value="all">All Job Types</option>
-                    <option value="Full Time">Full Time</option>
-                    <option value="Contractual">Contractual</option>
-                    <option value="Remote / Hybrid">Remote / Hybrid</option>
+                    <?php 
+                    $standardTypes = ['Full Time', 'Contractual', 'Remote', 'Hybrid'];
+                    $allTypes = array_unique(array_merge($standardTypes, $dbJobTypes ?? []));
+                    foreach ($allTypes as $typeName):
+                        if (empty(trim($typeName))) continue;
+                    ?>
+                        <option value="<?php echo htmlspecialchars($typeName); ?>"><?php echo htmlspecialchars($typeName); ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
 
@@ -134,10 +149,11 @@ try {
                                 </div>
                                 <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
                                     <span class="text-xs text-slate-400 font-medium capitalize"><?php echo htmlspecialchars($job['category']); ?></span>
-                                    <button onclick="openJobModal('<?php echo htmlspecialchars(addslashes($job['title'])); ?>', '<?php echo htmlspecialchars(addslashes($job['job_type'])); ?>', '<?php echo htmlspecialchars(addslashes($job['location'])); ?>', '<?php echo htmlspecialchars(addslashes($job['category'])); ?>', '<?php echo htmlspecialchars(addslashes($job['description'])); ?>', <?php echo $reqJson; ?>)" 
-                                            class="px-4 py-2 bg-slate-100 hover:bg-secondary hover:text-primary text-slate-700 font-bold text-xs rounded-xl transition-all duration-200">
-                                        More Details
-                                    </button>
+                                    <a href="/job_detail.php?id=<?php echo $job['id']; ?>" 
+                                       class="px-4 py-2 bg-slate-100 hover:bg-secondary hover:text-primary text-slate-700 font-bold text-xs rounded-xl transition-all duration-200 flex items-center gap-1.5">
+                                        <span>More Details</span>
+                                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                    </a>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -158,49 +174,6 @@ try {
 
     </div>
 </section>
-
-
-
-<!-- Interactive Job Details Modal -->
-<div id="job-modal" class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative max-h-[90vh] overflow-y-auto">
-        <!-- Close Button -->
-        <button onclick="closeJobModal()" class="absolute top-5 right-5 h-9 w-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition focus:outline-none">
-            <i class="fa-solid fa-xmark text-lg"></i>
-        </button>
-
-        <!-- Modal Header -->
-        <div class="space-y-3 pb-6 border-b border-slate-100">
-            <div class="flex flex-wrap items-center gap-2">
-                <span id="modal-type" class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold uppercase tracking-wider border border-amber-200/60"></span>
-                <span id="modal-category" class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-semibold"></span>
-            </div>
-            <h2 id="modal-title" class="text-2xl font-serif font-bold text-primary"></h2>
-            <p id="modal-location" class="text-xs text-slate-500"><i class="fa-solid fa-location-dot mr-1"></i><span></span></p>
-        </div>
-
-        <!-- Modal Body -->
-        <div class="py-6 space-y-5 text-sm text-slate-600 leading-relaxed">
-            <div>
-                <h4 class="font-bold text-primary font-serif mb-2">Job Description</h4>
-                <p id="modal-description" class="font-light"></p>
-            </div>
-
-            <div>
-                <h4 class="font-bold text-primary font-serif mb-2">Key Requirements</h4>
-                <ul id="modal-requirements" class="space-y-2 text-xs font-medium"></ul>
-            </div>
-        </div>
-
-        <!-- Modal Footer CTA -->
-        <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-slate-500">Send your resume to <span class="font-mono font-bold text-slate-800">irkgpservicespvtltd@gmail.com</span></p>
-            <a id="modal-apply-btn" href="https://wa.me/917384779569?text=Hello%20IRKGP%20Services%2C%20I%20want%20to%20apply%20for%20a%20career%20opening." target="_blank" class="w-full sm:w-auto px-6 py-3 bg-secondary hover:bg-amber-500 text-primary font-bold text-xs uppercase tracking-wider rounded-xl shadow transition text-center">
-                Apply via WhatsApp
-            </a>
-        </div>
-    </div>
-</div>
 
 <!-- Dynamic Search & Filter Script -->
 <script>
@@ -251,43 +224,6 @@ document.addEventListener('DOMContentLoaded', function() {
     categorySelect.addEventListener('change', filterJobs);
     jobtypeSelect.addEventListener('change', filterJobs);
     locationSelect.addEventListener('change', filterJobs);
-});
-
-function openJobModal(title, type, location, category, description, requirements) {
-    document.getElementById('modal-title').textContent = title;
-    document.getElementById('modal-type').textContent = type;
-    document.getElementById('modal-category').textContent = category;
-    document.getElementById('modal-location').querySelector('span').textContent = location;
-    document.getElementById('modal-description').textContent = description;
-
-    const reqList = document.getElementById('modal-requirements');
-    reqList.innerHTML = '';
-    requirements.forEach(req => {
-        const li = document.createElement('li');
-        li.className = 'flex items-start gap-2';
-        li.innerHTML = `<i class="fa-solid fa-check text-secondary mt-0.5 shrink-0"></i> <span>${req}</span>`;
-        reqList.appendChild(li);
-    });
-
-    const applyBtn = document.getElementById('modal-apply-btn');
-    const msg = encodeURIComponent(`Hello IRKGP Services, I am interested in applying for the position of "${title}" (${type}, ${location}). Please guide me with the application process.`);
-    applyBtn.href = `https://wa.me/917384779569?text=${msg}`;
-
-    const modal = document.getElementById('job-modal');
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-}
-
-function closeJobModal() {
-    const modal = document.getElementById('job-modal');
-    modal.classList.remove('flex');
-    modal.classList.add('hidden');
-}
-
-document.getElementById('job-modal').addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeJobModal();
-    }
 });
 </script>
 
