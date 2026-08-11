@@ -1,7 +1,17 @@
 <?php
 $pageTitle = "Careers - Join Our Team";
+require_once __DIR__ . '/config/db.php';
 include 'includes/head.php';
 include 'includes/navbar.php';
+
+// Fetch active jobs from database
+try {
+    $pdo = getDBConnection();
+    $stmt = $pdo->query("SELECT * FROM `jobs` WHERE `status` = 'active' ORDER BY `created_at` DESC");
+    $dbJobs = $stmt->fetchAll();
+} catch (Exception $e) {
+    $dbJobs = [];
+}
 ?>
 
 <!-- Hero Banner Section -->
@@ -59,219 +69,79 @@ include 'includes/navbar.php';
             <p class="text-slate-500 font-medium text-sm sm:text-base">Find the role that fits your expertise and join IRKGP Services Pvt. Ltd. in driving corporate excellence.</p>
         </div>
 
-        <!-- Search Bar -->
-        <div class="bg-white p-3 sm:p-4 rounded-2xl border border-slate-200/80 shadow-sm mb-12 max-w-2xl mx-auto">
+        <!-- Filters & Search Bar -->
+        <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200/80 shadow-sm mb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Search Input -->
             <div class="relative">
-                <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400 text-base"></i>
-                <input type="text" id="job-search" placeholder="Search by job title, department, or location..." class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-secondary focus:bg-white transition text-slate-800 font-medium">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+                <input type="text" id="job-search" placeholder="Search job title..." class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-secondary focus:bg-white transition text-slate-800 font-medium">
+            </div>
+
+            <!-- Category Filter -->
+            <div>
+                <select id="category-filter" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-secondary focus:bg-white transition text-slate-700 font-medium">
+                    <option value="all">All Categories</option>
+                    <option value="hr">HR & Recruitment</option>
+                    <option value="operations">Operations & Management</option>
+                    <option value="sales">Sales & Business Development</option>
+                    <option value="it">IT & Software</option>
+                    <option value="finance">Finance & Accounts</option>
+                    <option value="admin">Administration</option>
+                </select>
+            </div>
+
+            <!-- Job Type Filter -->
+            <div>
+                <select id="jobtype-filter" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-secondary focus:bg-white transition text-slate-700 font-medium">
+                    <option value="all">All Job Types</option>
+                    <option value="Full Time">Full Time</option>
+                    <option value="Contractual">Contractual</option>
+                    <option value="Remote / Hybrid">Remote / Hybrid</option>
+                </select>
+            </div>
+
+            <!-- Location Filter -->
+            <div>
+                <select id="location-filter" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-secondary focus:bg-white transition text-slate-700 font-medium">
+                    <option value="all">All Locations</option>
+                    <option value="Purnia">Purnia, Bihar (HO)</option>
+                    <option value="Patna">Patna, Bihar</option>
+                    <option value="Delhi NCR">Delhi NCR</option>
+                    <option value="Remote">Remote</option>
+                </select>
             </div>
         </div>
 
-        <!-- Layout: Side Graphic + Job Cards Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
-            <!-- Left Side Graphic Column -->
-            <div class="lg:col-span-3 hidden lg:block sticky top-28 space-y-6">
-                <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm text-center relative overflow-hidden group">
-                    <img src="/assets/images/career-side-graphic.png" alt="Professional Representative" class="w-full h-auto object-cover rounded-xl mb-4 group-hover:scale-105 transition duration-500">
-                    <h4 class="font-serif font-bold text-primary text-base">Ready to Excel?</h4>
-                    <p class="text-xs text-slate-500 mt-1 leading-relaxed">We match talent with purpose. Grow your career with structured corporate policies.</p>
-                </div>
-                <div class="bg-primary text-white rounded-2xl p-5 shadow-sm space-y-3 border border-slate-800">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-briefcase text-2xl text-secondary"></i>
-                        <div>
-                            <p class="text-2xl font-extrabold font-serif text-secondary">50+</p>
-                            <p class="text-xs text-slate-300 font-medium">Active Openings</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Column: Job Cards Grid -->
-            <div class="lg:col-span-9">
-                <div id="jobs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                    <!-- Job Card 1 -->
-                    <div class="job-card bg-white border border-slate-200 hover:border-secondary rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
-                         data-category="hr" data-jobtype="Full Time" data-location="Purnia">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-[11px] font-bold uppercase tracking-wider border border-amber-200/60">Full Time</span>
-                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>Purnia</span>
+        <!-- Full Width Job Cards Grid -->
+        <div id="jobs-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <?php if (!empty($dbJobs)): ?>
+                        <?php foreach ($dbJobs as $job): ?>
+                            <?php 
+                            $reqArray = array_values(array_filter(array_map('trim', explode("\n", $job['requirements']))));
+                            $reqJson = htmlspecialchars(json_encode($reqArray), ENT_QUOTES, 'UTF-8');
+                            ?>
+                            <div class="job-card bg-white border border-slate-200 hover:border-secondary rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+                                 data-category="<?php echo htmlspecialchars($job['category']); ?>" 
+                                 data-jobtype="<?php echo htmlspecialchars($job['job_type']); ?>" 
+                                 data-location="<?php echo htmlspecialchars($job['location']); ?>">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-[11px] font-bold uppercase tracking-wider border border-amber-200/60"><?php echo htmlspecialchars($job['job_type']); ?></span>
+                                        <span class="text-xs text-slate-400 capitalize"><i class="fa-solid fa-location-dot mr-1"></i><?php echo htmlspecialchars($job['location']); ?></span>
+                                    </div>
+                                    <h3 class="font-serif font-bold text-primary text-lg group-hover:text-secondary transition capitalize"><?php echo htmlspecialchars($job['title']); ?></h3>
+                                    <p class="text-slate-500 text-xs leading-relaxed line-clamp-2 capitalize"><?php echo htmlspecialchars($job['description']); ?></p>
+                                </div>
+                                <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
+                                    <span class="text-xs text-slate-400 font-medium capitalize"><?php echo htmlspecialchars($job['category']); ?></span>
+                                    <button onclick="openJobModal('<?php echo htmlspecialchars(addslashes($job['title'])); ?>', '<?php echo htmlspecialchars(addslashes($job['job_type'])); ?>', '<?php echo htmlspecialchars(addslashes($job['location'])); ?>', '<?php echo htmlspecialchars(addslashes($job['category'])); ?>', '<?php echo htmlspecialchars(addslashes($job['description'])); ?>', <?php echo $reqJson; ?>)" 
+                                            class="px-4 py-2 bg-slate-100 hover:bg-secondary hover:text-primary text-slate-700 font-bold text-xs rounded-xl transition-all duration-200">
+                                        More Details
+                                    </button>
+                                </div>
                             </div>
-                            <h3 class="font-serif font-bold text-primary text-lg group-hover:text-secondary transition">Talent Acquisition Specialist</h3>
-                            <p class="text-slate-500 text-xs leading-relaxed line-clamp-2">Sourcing, interviewing, and placing skilled technical candidates for key enterprise contracts.</p>
-                        </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-medium">HR & Recruitment</span>
-                            <button onclick="openJobModal('Talent Acquisition Specialist', 'Full Time', 'Purnia, Bihar (HO)', 'HR & Recruitment', 'We are looking for an experienced Talent Acquisition Specialist to drive our manpower recruitment pipeline. You will be responsible for candidate sourcing, preliminary screening, client alignment, and managing talent acquisition databases across Bihar & Pan India.', ['Minimum 2+ years experience in HR recruitment', 'Strong communication & screening skills', 'Degree in HR, Business Administration or related field'])" 
-                                    class="px-4 py-2 bg-slate-100 hover:bg-secondary hover:text-primary text-slate-700 font-bold text-xs rounded-xl transition-all duration-200">
-                                More Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Job Card 2 -->
-                    <div class="job-card bg-white border border-slate-200 hover:border-secondary rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
-                         data-category="hr" data-jobtype="Full Time" data-location="Patna">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-[11px] font-bold uppercase tracking-wider border border-amber-200/60">Full Time</span>
-                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>Patna</span>
-                            </div>
-                            <h3 class="font-serif font-bold text-primary text-lg group-hover:text-secondary transition">Senior HR Recruiter</h3>
-                            <p class="text-slate-500 text-xs leading-relaxed line-clamp-2">Leading end-to-end recruitment drives, headcount allocations, and onboarding compliance.</p>
-                        </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-medium">HR & Recruitment</span>
-                            <button onclick="openJobModal('Senior HR Recruiter', 'Full Time', 'Patna, Bihar', 'HR & Recruitment', 'Lead high-volume recruitment projects for corporate staffing demands. Oversee interviewer scheduling, background check validation, and offer issuance.', ['3+ years in corporate recruitment or consultancy', 'Proven record in volume hiring', 'Bachelor degree in relevant stream'])" 
-                                    class="px-4 py-2 bg-slate-100 hover:bg-secondary hover:text-primary text-slate-700 font-bold text-xs rounded-xl transition-all duration-200">
-                                More Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Job Card 3 -->
-                    <div class="job-card bg-white border border-slate-200 hover:border-secondary rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
-                         data-category="sales" data-jobtype="Full Time" data-location="Delhi NCR">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-[11px] font-bold uppercase tracking-wider border border-amber-200/60">Full Time</span>
-                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>Delhi NCR</span>
-                            </div>
-                            <h3 class="font-serif font-bold text-primary text-lg group-hover:text-secondary transition">Business Development Manager</h3>
-                            <p class="text-slate-500 text-xs leading-relaxed line-clamp-2">Acquiring new enterprise clients and establishing manpower supply contracts with industries.</p>
-                        </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-medium">Sales & Marketing</span>
-                            <button onclick="openJobModal('Business Development Manager', 'Full Time', 'Delhi NCR', 'Sales & Business Development', 'Drive B2B sales and manpower contract acquisitions with industrial clients. Negotiate service-level agreements and manage corporate relationships.', ['4+ years B2B corporate sales experience', 'Extensive network in manufacturing/corporate sector', 'Strong pitch & negotiation skills'])" 
-                                    class="px-4 py-2 bg-slate-100 hover:bg-secondary hover:text-primary text-slate-700 font-bold text-xs rounded-xl transition-all duration-200">
-                                More Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Job Card 4 -->
-                    <div class="job-card bg-white border border-slate-200 hover:border-secondary rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
-                         data-category="operations" data-jobtype="Full Time" data-location="Purnia">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-[11px] font-bold uppercase tracking-wider border border-amber-200/60">Full Time</span>
-                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>Purnia</span>
-                            </div>
-                            <h3 class="font-serif font-bold text-primary text-lg group-hover:text-secondary transition">Manpower Operations Lead</h3>
-                            <p class="text-slate-500 text-xs leading-relaxed line-clamp-2">Coordinating shift schedules, site worker deployments, and physical site compliance.</p>
-                        </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-medium">Operations</span>
-                            <button onclick="openJobModal('Manpower Operations Lead', 'Full Time', 'Purnia, Bihar (HO)', 'Operations & Management', 'Supervise industrial site deployments, attendance tracking, shift allocation, and ground staff safety compliance.', ['2+ years field operational supervision', 'Leadership & dispute resolution skills', 'Willingness to conduct site visits'])" 
-                                    class="px-4 py-2 bg-slate-100 hover:bg-secondary hover:text-primary text-slate-700 font-bold text-xs rounded-xl transition-all duration-200">
-                                More Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Job Card 5 -->
-                    <div class="job-card bg-white border border-slate-200 hover:border-secondary rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
-                         data-category="it" data-jobtype="Remote / Hybrid" data-location="Remote">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-[11px] font-bold uppercase tracking-wider border border-slate-200">Remote / Hybrid</span>
-                                <span class="text-xs text-slate-400"><i class="fa-solid fa-laptop-code mr-1"></i>Remote</span>
-                            </div>
-                            <h3 class="font-serif font-bold text-primary text-lg group-hover:text-secondary transition">Full-Stack Web Developer</h3>
-                            <p class="text-slate-500 text-xs leading-relaxed line-clamp-2">Maintaining internal portal software, candidate management tools, and website features.</p>
-                        </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-medium">IT & Software</span>
-                            <button onclick="openJobModal('Full-Stack Web Developer', 'Remote / Hybrid', 'Remote / Hybrid', 'IT & Software', 'Develop and optimize internal portals, CRM systems, and candidate tracking web tools using PHP, JavaScript, Tailwind CSS, and MySQL.', ['Solid proficiency in PHP, JavaScript & MySQL', 'Experience with responsive web UI & REST APIs', 'Good problem-solving mindset'])" 
-                                    class="px-4 py-2 bg-slate-100 hover:bg-secondary hover:text-primary text-slate-700 font-bold text-xs rounded-xl transition-all duration-200">
-                                More Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Job Card 6 -->
-                    <div class="job-card bg-white border border-slate-200 hover:border-secondary rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
-                         data-category="finance" data-jobtype="Full Time" data-location="Purnia">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-[11px] font-bold uppercase tracking-wider border border-amber-200/60">Full Time</span>
-                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>Purnia</span>
-                            </div>
-                            <h3 class="font-serif font-bold text-primary text-lg group-hover:text-secondary transition">Accounts & Payroll Executive</h3>
-                            <p class="text-slate-500 text-xs leading-relaxed line-clamp-2">Managing monthly payroll disbursements, tax withholdings, and client invoicing records.</p>
-                        </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-medium">Finance & Accounts</span>
-                            <button onclick="openJobModal('Accounts & Payroll Executive', 'Full Time', 'Purnia, Bihar (HO)', 'Finance & Accounts', 'Handle corporate accounting, Tally Prime entries, GST filing data preparation, and staff payroll computation.', ['B.Com / M.Com or Tally certification', 'Knowledge of GST, PF & ESIC regulations', 'Proficiency in MS Excel'])" 
-                                    class="px-4 py-2 bg-slate-100 hover:bg-secondary hover:text-primary text-slate-700 font-bold text-xs rounded-xl transition-all duration-200">
-                                More Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Job Card 7 -->
-                    <div class="job-card bg-white border border-slate-200 hover:border-secondary rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
-                         data-category="operations" data-jobtype="Contractual" data-location="Patna">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-[11px] font-bold uppercase tracking-wider border border-slate-200">Contractual</span>
-                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>Patna</span>
-                            </div>
-                            <h3 class="font-serif font-bold text-primary text-lg group-hover:text-secondary transition">Industrial Site Supervisor</h3>
-                            <p class="text-slate-500 text-xs leading-relaxed line-clamp-2">Overseeing daily factory worker attendance, safety gear checks, and shift handovers.</p>
-                        </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-medium">Operations</span>
-                            <button onclick="openJobModal('Industrial Site Supervisor', 'Contractual', 'Patna / Industrial Units', 'Operations & Management', 'Oversee physical worker presence at client industrial sites, enforce safety protocols, and submit daily deployment reports.', ['1+ year experience in industrial/factory site supervision', 'Strong leadership skills', 'Immediate joiner preferred'])" 
-                                    class="px-4 py-2 bg-slate-100 hover:bg-secondary hover:text-primary text-slate-700 font-bold text-xs rounded-xl transition-all duration-200">
-                                More Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Job Card 8 -->
-                    <div class="job-card bg-white border border-slate-200 hover:border-secondary rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
-                         data-category="sales" data-jobtype="Full Time" data-location="Patna">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-[11px] font-bold uppercase tracking-wider border border-amber-200/60">Full Time</span>
-                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>Patna</span>
-                            </div>
-                            <h3 class="font-serif font-bold text-primary text-lg group-hover:text-secondary transition">Digital Marketing Associate</h3>
-                            <p class="text-slate-500 text-xs leading-relaxed line-clamp-2">Managing social media channels, recruitment campaigns, and corporate brand awareness.</p>
-                        </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-medium">Sales & Marketing</span>
-                            <button onclick="openJobModal('Digital Marketing Associate', 'Full Time', 'Patna, Bihar', 'Sales & Marketing', 'Design social media posters, execute job campaign ads, manage LinkedIn/Instagram company pages, and boost candidate reach.', ['1-2 years digital marketing experience', 'Basic graphic design (Canva/Photoshop)', 'Ad campaign management skills'])" 
-                                    class="px-4 py-2 bg-slate-100 hover:bg-secondary hover:text-primary text-slate-700 font-bold text-xs rounded-xl transition-all duration-200">
-                                More Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Job Card 9 -->
-                    <div class="job-card bg-white border border-slate-200 hover:border-secondary rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
-                         data-category="hr" data-jobtype="Full Time" data-location="Purnia">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-[11px] font-bold uppercase tracking-wider border border-amber-200/60">Full Time</span>
-                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>Purnia</span>
-                            </div>
-                            <h3 class="font-serif font-bold text-primary text-lg group-hover:text-secondary transition">Executive Admin Assistant</h3>
-                            <p class="text-slate-500 text-xs leading-relaxed line-clamp-2">Handling office documentation, visitor logs, mail dispatch, and director schedule coordination.</p>
-                        </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-medium">Administration</span>
-                            <button onclick="openJobModal('Executive Admin Assistant', 'Full Time', 'Purnia, Bihar (HO)', 'Administration', 'Manage office front desk operations, coordinate internal documentation, maintain office supplies, and support directorate secretarial tasks.', ['Graduate in any discipline', 'Proficiency in MS Office & typing', 'Polite phone & email etiquette'])" 
-                                    class="px-4 py-2 bg-slate-100 hover:bg-secondary hover:text-primary text-slate-700 font-bold text-xs rounded-xl transition-all duration-200">
-                                More Details
-                            </button>
-                        </div>
-                    </div>
-
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
 
                 <!-- No Results State -->
@@ -289,48 +159,7 @@ include 'includes/navbar.php';
     </div>
 </section>
 
-<!-- Beware of Recruitment Scams Notice Box (IRKGP Accent Alert Theme) -->
-<section class="py-16 bg-white border-t border-slate-200">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="bg-amber-50/40 border border-secondary/30 rounded-3xl p-6 sm:p-10 shadow-sm relative overflow-hidden">
-            <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-secondary/10 rounded-full blur-2xl pointer-events-none"></div>
 
-            <div class="flex items-start gap-4 mb-6">
-                <div class="h-12 w-12 rounded-2xl bg-secondary text-primary flex items-center justify-center text-xl shrink-0 shadow-sm font-bold">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl sm:text-2xl font-extrabold font-serif text-primary tracking-tight">Beware of Recruitment Scams</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm mt-1 leading-relaxed">
-                        It has come to our attention that certain unauthorized individuals or fake agencies may impersonate IRKGP representatives, offering fraudulent job opportunities, collecting personal information, or demanding money.
-                    </p>
-                </div>
-            </div>
-
-            <div class="space-y-3 text-xs sm:text-sm text-slate-700 pl-2 sm:pl-16">
-                <p class="font-bold text-slate-800 text-xs uppercase tracking-wider">Please be aware of the following official policies:</p>
-                <ul class="space-y-2.5">
-                    <li class="flex items-start gap-2.5">
-                        <i class="fa-solid fa-circle-check text-secondary text-base mt-0.5 shrink-0"></i>
-                        <span><strong>Zero Fee Policy:</strong> We never charge any fees, processing charges, or security deposits at any stage of our recruitment process.</span>
-                    </li>
-                    <li class="flex items-start gap-2.5">
-                        <i class="fa-solid fa-circle-check text-secondary text-base mt-0.5 shrink-0"></i>
-                        <span><strong>Official Channels Only:</strong> All job openings and offer communications are shared exclusively via our official website (<a href="/" class="text-secondary font-bold hover:underline">irkgpservices.com</a>) and verified company emails (<span class="font-mono text-slate-800">@irkgpservices.com</span>).</span>
-                    </li>
-                    <li class="flex items-start gap-2.5">
-                        <i class="fa-solid fa-circle-check text-secondary text-base mt-0.5 shrink-0"></i>
-                        <span><strong>No Unauthorized Payments:</strong> Do not share bank account details or make payments to any individual claiming to represent IRKGP.</span>
-                    </li>
-                </ul>
-
-                <div class="pt-4 border-t border-secondary/20 mt-4 text-xs text-slate-600">
-                    If you receive any suspicious job offer or communication, please verify its authenticity immediately by writing to <a href="mailto:info@irkgpservices.com" class="text-secondary font-bold hover:underline">info@irkgpservices.com</a>.
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Interactive Job Details Modal -->
 <div id="job-modal" class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm hidden items-center justify-center p-4">
@@ -377,22 +206,33 @@ include 'includes/navbar.php';
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('job-search');
+    const categorySelect = document.getElementById('category-filter');
+    const jobtypeSelect = document.getElementById('jobtype-filter');
+    const locationSelect = document.getElementById('location-filter');
     const jobcards = document.querySelectorAll('.job-card');
     const noResults = document.getElementById('no-results');
 
     function filterJobs() {
         const query = searchInput.value.toLowerCase().trim();
+        const selectedCat = categorySelect.value.toLowerCase();
+        const selectedType = jobtypeSelect.value.toLowerCase();
+        const selectedLoc = locationSelect.value.toLowerCase();
+
         let visibleCount = 0;
 
         jobcards.forEach(card => {
             const title = card.querySelector('h3').textContent.toLowerCase();
             const desc = card.querySelector('p').textContent.toLowerCase();
-            const loc = card.getAttribute('data-location').toLowerCase();
-            const type = card.getAttribute('data-jobtype').toLowerCase();
+            const cat = (card.getAttribute('data-category') || '').toLowerCase();
+            const type = (card.getAttribute('data-jobtype') || '').toLowerCase();
+            const loc = (card.getAttribute('data-location') || '').toLowerCase();
 
-            const matchesQuery = query === '' || title.includes(query) || desc.includes(query) || loc.includes(query) || type.includes(query);
+            const matchesQuery = query === '' || title.includes(query) || desc.includes(query) || loc.includes(query);
+            const matchesCat = selectedCat === 'all' || cat === selectedCat;
+            const matchesType = selectedType === 'all' || type === selectedType;
+            const matchesLoc = selectedLoc === 'all' || loc.includes(selectedLoc);
 
-            if (matchesQuery) {
+            if (matchesQuery && matchesCat && matchesType && matchesLoc) {
                 card.style.display = 'flex';
                 visibleCount++;
             } else {
@@ -408,6 +248,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     searchInput.addEventListener('input', filterJobs);
+    categorySelect.addEventListener('change', filterJobs);
+    jobtypeSelect.addEventListener('change', filterJobs);
+    locationSelect.addEventListener('change', filterJobs);
 });
 
 function openJobModal(title, type, location, category, description, requirements) {
