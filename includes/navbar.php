@@ -7,6 +7,8 @@ if ($currentPage === 'about.php') {
     $activePage = 'services';
 } elseif ($currentPage === 'contact.php') {
     $activePage = 'contact';
+} elseif ($currentPage === 'career.php') {
+    $activePage = 'career';
 }
 ?>
 <!-- Navigation Bar -->
@@ -29,7 +31,7 @@ if ($currentPage === 'about.php') {
     <div class="max-w-7xl mx-auto px-3 h-20 flex items-center justify-between">
         <!-- Logo -->
         <a href="/index.php" class="flex items-center gap-3 group">
-            <img src="/assets/images/irkgp-logo.png?v=5" alt="IRKGP Logo" class="h-20 md:h-24 w-auto object-contain">
+            <img src="/assets/images/irkgp-logo.png?v=5" alt="IRKGP Logo" class="h-20 md:h-20 w-auto object-contain">
         </a>
 
         <!-- Desktop Menu Links -->
@@ -40,6 +42,8 @@ if ($currentPage === 'about.php') {
                 class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'about' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">About</a>
             <a href="/services.php"
                 class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'services' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Services</a>
+            <a href="/career.php"
+                class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'career' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Careers</a>
             <a href="/contact.php"
                 class="text-sm font-semibold transition duration-300 <?php echo $activePage === 'contact' ? 'text-secondary border-b-2 border-secondary pb-1 font-bold' : 'text-slate-600 hover:text-secondary'; ?>">Contact</a>
 
@@ -63,6 +67,8 @@ if ($currentPage === 'about.php') {
             class="block text-sm font-semibold py-2 <?php echo $activePage === 'about' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">About</a>
         <a href="/services.php"
             class="block text-sm font-semibold py-2 <?php echo $activePage === 'services' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">Services</a>
+        <a href="/career.php"
+            class="block text-sm font-semibold py-2 <?php echo $activePage === 'career' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">Careers</a>
         <a href="/contact.php"
             class="block text-sm font-semibold py-2 <?php echo $activePage === 'contact' ? 'text-secondary font-bold' : 'text-slate-600 hover:text-primary'; ?>">Contact</a>
     </div>

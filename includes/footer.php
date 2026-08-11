@@ -42,6 +42,8 @@
                 <li><a href="/services.php"
                         class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Our
                         Services</a></li>
+                <li><a href="/career.php"
+                        class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Careers</a></li>
                 <li><a href="/contact.php"
                         class="text-slate-600 hover:text-secondary hover:translate-x-1 inline-block transition-all duration-200">Contact
                         Us</a></li>
