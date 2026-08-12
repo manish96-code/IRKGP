@@ -114,21 +114,32 @@ try {
                     <?php endif; ?>
                 </a>
             </div>
+
+            <!-- Group: Account Settings -->
+            <div class="space-y-1">
+                <p class="px-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">System Settings</p>
+                
+                <a href="/admin/profile.php" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 <?php echo $adminActivePage === 'profile' ? 'bg-amber-500/15 text-amber-300 font-bold border border-amber-500/30' : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'; ?>">
+                    <i class="fa-solid fa-user-shield text-sm text-amber-400"></i>
+                    <span>Profile & Security</span>
+                </a>
+            </div>
         </div>
 
         <!-- Sidebar Footer Admin Info -->
         <div class="p-4 border-t border-slate-800/80 bg-slate-950/60 space-y-3 shrink-0">
-            <div class="flex items-center justify-between">
+            <a href="/admin/profile.php" class="flex items-center justify-between group p-1.5 -m-1.5 rounded-xl hover:bg-slate-800/60 transition">
                 <div class="flex items-center gap-2.5 min-w-0">
-                    <div class="h-8 w-8 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xs flex items-center justify-center shrink-0 border border-amber-500/30">
+                    <div class="h-8 w-8 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xs flex items-center justify-center shrink-0 border border-amber-500/30 group-hover:scale-105 transition">
                         <?php echo strtoupper(substr($_SESSION['admin_name'] ?? 'A', 0, 1)); ?>
                     </div>
                     <div class="truncate">
-                        <p class="text-xs font-bold text-white truncate"><?php echo htmlspecialchars($_SESSION['admin_name'] ?? 'Admin'); ?></p>
+                        <p class="text-xs font-bold text-white truncate group-hover:text-amber-300 transition"><?php echo htmlspecialchars($_SESSION['admin_name'] ?? 'Admin'); ?></p>
                         <p class="text-[10px] text-slate-400 truncate"><?php echo htmlspecialchars($_SESSION['admin_email'] ?? 'admin@irkgpservices.com'); ?></p>
                     </div>
                 </div>
-            </div>
+                <i class="fa-solid fa-chevron-right text-[10px] text-slate-500 group-hover:text-amber-400 transition"></i>
+            </a>
             
             <div class="pt-1">
                 <a href="/admin/logout.php" class="w-full px-2.5 py-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 text-xs font-bold text-center transition border border-rose-500/30 flex items-center justify-center gap-1.5">
