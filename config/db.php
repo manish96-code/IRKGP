@@ -1,6 +1,5 @@
 <?php
 // Database Configuration for IRKGP Services
-// Admin Access Credentials: Email = admin@irkgpservices.com | Password = Admin@123
 
 // Helper function to parse and load .env file
 function loadEnv($envPath) {
@@ -48,28 +47,10 @@ function getDBConnection() {
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]);
-
-            // Ensure Applications Table exists
-            ensureApplicationsTable($pdo);
-
         } catch (PDOException $e) {
             die("Database Connection Failure: " . $e->getMessage());
         }
     }
 
     return $pdo;
-}
-
-function ensureApplicationsTable($pdo) {
-    $pdo->exec("CREATE TABLE IF NOT EXISTS `job_applications` (
-        `id` INT AUTO_INCREMENT PRIMARY KEY,
-        `job_id` INT DEFAULT NULL,
-        `applicant_name` VARCHAR(150) NOT NULL,
-        `email` VARCHAR(150) NOT NULL,
-        `phone` VARCHAR(30) NOT NULL,
-        `experience` VARCHAR(50) DEFAULT NULL,
-        `notes` TEXT DEFAULT NULL,
-        `status` ENUM('new', 'reviewed', 'shortlisted', 'rejected') DEFAULT 'new',
-        `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    ) ENGINE=InnoDB;");
 }
