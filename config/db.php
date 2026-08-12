@@ -1,10 +1,43 @@
 <?php
 // Database Configuration for IRKGP Services
 // Admin Access Credentials: Email = admin@irkgpservices.com | Password = Admin@123
-define('DB_HOST', '127.0.0.1');
-define('DB_USER', 'root');
-define('DB_PASS', 'Manish@9661');
-define('DB_NAME', 'irkgp_db');
+
+// Helper function to parse and load .env file
+function loadEnv($envPath) {
+    if (!file_exists($envPath)) {
+        return;
+    }
+
+    $lines = file($envPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if (empty($line) || strpos($line, '#') === 0) {
+            continue;
+        }
+
+        if (strpos($line, '=') !== false) {
+            list($key, $value) = explode('=', $line, 2);
+            $key = trim($key);
+            $value = trim($value);
+            // Strip surrounding quotes if present
+            $value = preg_replace('/^["\'](.*)["\']$/', '$1', $value);
+
+            if (!array_key_exists($key, $_SERVER) && !array_key_exists($key, $_ENV)) {
+                putenv("{$key}={$value}");
+                $_ENV[$key] = $value;
+                $_SERVER[$key] = $value;
+            }
+        }
+    }
+}
+
+// Load environment variables from .env
+loadEnv(__DIR__ . '/../.env');
+
+define('DB_HOST', getenv('DB_HOST') ?: '127.0.0.1');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') !== false ? getenv('DB_PASS') : '');
+define('DB_NAME', getenv('DB_NAME') ?: 'irkgp_db');
 
 function getDBConnection() {
     static $pdo = null;
@@ -37,57 +70,6 @@ function ensureApplicationsTable($pdo) {
         `experience` VARCHAR(50) DEFAULT NULL,
         `notes` TEXT DEFAULT NULL,
         `status` ENUM('new', 'reviewed', 'shortlisted', 'rejected') DEFAULT 'new',
-        `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (`job_id`) REFERENCES `jobs`(`id`) ON DELETE SET NULL
-    ) ENGINE=InnoDB;");
-}
-
-/*
-// Reference Code for Fresh Installation / Setup (Commented out):
-function initDatabaseAndTables() {
-    $serverPdo = new PDO("mysql:host=" . DB_HOST, DB_USER, DB_PASS, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]);
-    $serverPdo->exec("CREATE DATABASE IF NOT EXISTS `" . DB_NAME . "` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
-
-    $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]);
-
-    $pdo->exec("CREATE TABLE IF NOT EXISTS `admins` (
-        `id` INT AUTO_INCREMENT PRIMARY KEY,
-        `name` VARCHAR(100) NOT NULL,
-        `email` VARCHAR(150) UNIQUE NOT NULL,
-        `password` VARCHAR(255) NOT NULL,
-        `role` VARCHAR(50) DEFAULT 'admin',
-        `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    ) ENGINE=InnoDB;");
-
-    $pdo->exec("CREATE TABLE IF NOT EXISTS `jobs` (
-        `id` INT AUTO_INCREMENT PRIMARY KEY,
-        `title` VARCHAR(150) NOT NULL,
-        `category` VARCHAR(100) NOT NULL,
-        `job_type` VARCHAR(50) NOT NULL,
-        `location` VARCHAR(100) NOT NULL,
-        `description` TEXT NOT NULL,
-        `requirements` TEXT NOT NULL,
-        `status` ENUM('active', 'inactive') DEFAULT 'active',
-        `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    ) ENGINE=InnoDB;");
-
-    $pdo->exec("CREATE TABLE IF NOT EXISTS `job_applications` (
-        `id` INT AUTO_INCREMENT PRIMARY KEY,
-        `job_id` INT DEFAULT NULL,
-        `applicant_name` VARCHAR(150) NOT NULL,
-        `email` VARCHAR(150) NOT NULL,
-        `phone` VARCHAR(30) NOT NULL,
-        `experience` VARCHAR(50) DEFAULT NULL,
-        `notes` TEXT DEFAULT NULL,
-        `status` ENUM('new', 'reviewed', 'shortlisted', 'rejected') DEFAULT 'new',
         `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     ) ENGINE=InnoDB;");
 }
-*/
